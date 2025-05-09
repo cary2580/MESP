@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Str_BT_ClearQuarantineResult" xml:space="preserve">
+    <value>重新判定</value>
+  </data>
+  <data name="Str_BT_DeleteResultItem" xml:space="preserve">
+    <value>刪除報工資料</value>
+  </data>
+  <data name="Str_BT_Search" xml:space="preserve">
+    <value>查詢</value>
+  </data>
+  <data name="Str_ClearQuarantineResultMessage" xml:space="preserve">
+    <value>隔離單及相關流程卡已清除判定完成，請重新判定 !!</value>
+  </data>
+  <data name="Str_ConfirmClearQuarantineResultMessage" xml:space="preserve">
+    <value>是否確認重新判定 ? 確認後此流程卡將回復成尚未判定狀態</value>
+  </data>
+  <data name="Str_DeleteResultItemConfirmMessage" xml:space="preserve">
+    <value>是否刪除此筆報工資料 ? &lt;br/&gt; 確認刪除將會把後續流程報工資料一併刪除</value>
+  </data>
+  <data name="Str_Error_NoTicketRow" xml:space="preserve">
+    <value>查無此流程卡</value>
+  </data>
+  <data name="Str_Item_ApprovalTime" xml:space="preserve">
+    <value>核准時間</value>
+  </data>
+  <data name="Str_Item_ApproverName" xml:space="preserve">
+    <value>核准人</value>
+  </data>
+  <data name="Str_Item_Brand" xml:space="preserve">
+    <value>刻字號</value>
+  </data>
+  <data name="Str_Item_GoodQty" xml:space="preserve">
+    <value>良品數</value>
+  </data>
+  <data name="Str_Item_MachineName" xml:space="preserve">
+    <value>機台</value>
+  </data>
+  <data name="Str_Item_OperatorName" xml:space="preserve">
+    <value>操作員</value>
+  </data>
+  <data name="Str_Item_Quarantine" xml:space="preserve">
+    <value>隔離單</value>
+  </data>
+  <data name="Str_Item_ReportTimeEnd" xml:space="preserve">
+    <value>結工時間</value>
+  </data>
+  <data name="Str_Item_ReportTimeStart" xml:space="preserve">
+    <value>進工時間</value>
+  </data>
+  <data name="Str_Item_ReWork" xml:space="preserve">
+    <value>返工單</value>
+  </data>
+  <data name="Str_Item_ReWorkQty" xml:space="preserve">
+    <value>返工數</value>
+  </data>
+  <data name="Str_Item_ScrapQty" xml:space="preserve">
+    <value>報廢數</value>
+  </data>
+  <data name="Str_TicketID" xml:space="preserve">
+    <value>流程卡號</value>
+  </data>
+  <data name="Str_TicketInfo" xml:space="preserve">
+    <value>流程卡資訊</value>
+  </data>
+  <data name="Str_TicketInfo_BATCH" xml:space="preserve">
+    <value>批次屬性</value>
+  </data>
+  <data name="Str_TicketInfo_CHARG" xml:space="preserve">
+    <value>SAP批次號</value>
+  </data>
+  <data name="Str_TicketInfo_CreateAccountName" xml:space="preserve">
+    <value>建立人員</value>
+  </data>
+  <data name="Str_TicketInfo_CreateDate" xml:space="preserve">
+    <value>開單時間</value>
+  </data>
+  <data name="Str_TicketInfo_CreateProcess" xml:space="preserve">
+    <value>開單工序</value>
+  </data>
+  <data name="Str_TicketInfo_GroupCurr" xml:space="preserve">
+    <value>群組計數器</value>
+  </data>
+  <data name="Str_TicketInfo_MainTicketID" xml:space="preserve">
+    <value>主要流程卡號</value>
+  </data>
+  <data name="Str_TicketInfo_MAKTX" xml:space="preserve">
+    <value>成品物料</value>
+  </data>
+  <data name="Str_TicketInfo_MOStatusName" xml:space="preserve">
+    <value>工單狀態</value>
+  </data>
+  <data name="Str_TicketInfo_ParentTicketID" xml:space="preserve">
+    <value>上層流程卡號</value>
+  </data>
+  <data name="Str_TicketInfo_PSMNG" xml:space="preserve">
+    <value>工單總數量</value>
+  </data>
+  <data name="Str_TicketInfo_Qty" xml:space="preserve">
+    <value>開單數量</value>
+  </data>
+  <data name="Str_TicketInfo_SEMIFINBATCH" xml:space="preserve">
+    <value>半成品批號</value>
+  </data>
+  <data name="Str_TicketInfo_TEXT1" xml:space="preserve">
+    <value>生產版本</value>
+  </data>
+  <data name="Str_TicketInfo_TickeBoxQty" xml:space="preserve">
+    <value>工單總框數(一般)</value>
+  </data>
+  <data name="Str_TicketInfo_TicketType" xml:space="preserve">
+    <value>類型</value>
+  </data>
+  <data name="Str_TicketInfo_TotalTicketQty" xml:space="preserve">
+    <value>流程卡總數量(一般)</value>
+  </data>
+  <data name="Str_TicketInfo_WEMNG" xml:space="preserve">
+    <value>工單已交貨數量</value>
+  </data>
+  <data name="Str_TicketLifeCycleTitle" xml:space="preserve">
+    <value>流程卡作業</value>
+  </data>
+  <data name="Str_TicketQuarantineFirstTimeItemInfo" xml:space="preserve">
+    <value>隔離單初判明細</value>
+  </data>
+  <data name="Str_TicketQuarantineResultInfo" xml:space="preserve">
+    <value>隔離單判定明細</value>
+  </data>
+  <data name="Str_VerifyWorkCodeFailMessage" xml:space="preserve">
+    <value>判定人員工號錯誤</value>
+  </data>
+  <data name="Str_VerifyWorkCodeTitleBarText" xml:space="preserve">
+    <value>驗證判定人員</value>
+  </data>
+</root>

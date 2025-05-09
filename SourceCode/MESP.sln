@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.35026.282
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MESP", "http://localhost/MESP", "{E7482EBF-5E6E-4F69-89ED-5EDB79ECA670}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/MESP"
+		Debug.AspNetCompiler.PhysicalPath = "D:\Project\APDP\MESP\SourceCode\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\MESP\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/MESP"
+		Release.AspNetCompiler.PhysicalPath = "D:\Project\APDP\MESP\SourceCode\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\MESP\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "D:\Project\APDP\MESP\SourceCode\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7482EBF-5E6E-4F69-89ED-5EDB79ECA670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7482EBF-5E6E-4F69-89ED-5EDB79ECA670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECBC99A2-010E-4359-BCB7-FCE1920AE10D}
+	EndGlobalSection
+EndGlobal

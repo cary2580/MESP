@@ -1,0 +1,682 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="NoFrame.master.cs" Inherits="NoFrame" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta http-equiv="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <link href="<%#ResolveClientUrl(@"~/Image/logo.png") %>" rel="shortcut icon" type="image/x-icon" />
+    <title>
+        <%= (string)GetGlobalResourceObject("GlobalRes","Str_SystemName") %>
+    </title>
+    <link href="<%#ResolveClientUrl(@"~/Content/bootstrap.min.css") %>" rel="stylesheet" />
+    <link href="<%#ResolveClientUrl(@"~/vendor/metisMenu/metisMenu.min.css") %>" rel="stylesheet" />
+    <link href="<%#ResolveClientUrl(@"~/Content/sb-admin-2.min.css") %>" rel="stylesheet" />
+    <link href="<%#ResolveClientUrl(@"~/vendor/morrisjs/morris.css") %>" rel="stylesheet" />
+    <link href="<%#ResolveClientUrl(@"~/vendor/font-awesome/css/font-awesome.min.css") %>" rel="stylesheet" />
+    <link href="<%#ResolveClientUrl(@"~/vendor/bootstrap-social/bootstrap-social.css") %>" rel="stylesheet" />
+    <link href="<%#ResolveClientUrl(@"~/Content/bootstrap-fileinput/css/fileinput.min.css") %>" rel="stylesheet" />
+    <link href="<%#ResolveClientUrl(@"~/Content/ui.jqgrid-bootstrap.css") %>" rel="stylesheet" />
+    <link href="<%#ResolveClientUrl(@"~/Content/ui.jqgrid-bootstrap-ui.css") %>" rel="stylesheet" />
+    <link href="<%#ResolveClientUrl(@"~/Content/jquery-ui-timepicker-addon.min.css") %>" rel="stylesheet" />
+    <link href="<%#ResolveClientUrl(@"~/Content/themes/base/jquery-ui.min.css") %>" rel="stylesheet" />
+    <link href="<%#ResolveClientUrl(@"~/vendor/fullcalendar/main.min.css") %>" rel="stylesheet" />
+    <link href="<%#ResolveClientUrl(@"~/Content/bootstrap-select.min.css") %>" rel="stylesheet" />
+
+    <%--<link href="<%#ResolveClientUrl(@"~/Content/themes/back/jquery-ui.min.css") %>" rel="stylesheet" />--%>
+    <%--    <link href="<%#ResolveClientUrl(@"~/Content/themes/custom-theme/jquery-ui-1.10.0.custom.css") %>" rel="stylesheet" />--%>
+
+    <link href="<%#ResolveClientUrl(@"~/Content/jquery.bootstrap-touchspin.css") %>" rel="stylesheet" />
+    <link href="<%#ResolveClientUrl(@"~/Content/Main.css") %>" rel="stylesheet" />
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/jquery-3.6.3.min.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/jquery-ui-1.13.2.min.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/bootstrap.min.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/vendor/metisMenu/metisMenu.min.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/sb-admin-2.min.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/vendor/raphael/raphael.min.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/vendor/morrisjs/morris.min.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/node_modules/dayjs/dayjs.min.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/node_modules/dayjs/plugin/customParseFormat.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/node_modules/dayjs/plugin/localizedFormat.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/bootstrap-select.min.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/fileinput.min.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Content/bootstrap-fileinput/themes/fa4/theme.min.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/bootstrap-treeview.min.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/jquery.bootstrap-touchspin.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/jquery.base64.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/jquery.cookie.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/jquery.timers.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/jquery.client.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/jquery.fileDownload.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/jquery-ui-sliderAccess.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/jquery-ui-timepicker-addon.min.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/numeral/numeral.min.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/numeral/locales.min.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/jquery.jqGrid.min.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/vendor/fullcalendar/main.min.js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/vendor/fullcalendar/locales/"+System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLower().Replace("-us","-gb")+".js") %>"></script>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/Main.js") %>"></script>
+
+    <% if (System.Threading.Thread.CurrentThread.CurrentUICulture.Name == "zh-CN")
+        { %>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/i18n/grid.locale-cn.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/i18n/datepicker-zh-CN.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/i18n/jquery-ui-timepicker-zh-CN.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/locales/zh-CN.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/i18n/defaults-zh_CN.min.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/node_modules/dayjs/locale/zh-cn.js") %>"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            numeral.locale("chs");
+
+            dayjs.locale("<%=System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLower()%>");
+        });
+    </script>
+    <% } %>
+    <% else if (System.Threading.Thread.CurrentThread.CurrentUICulture.Name == "en-US")
+        { %>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/i18n/grid.locale-en.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/i18n/datepicker-en-GB.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/i18n/defaults-en_US.min.js") %>"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            dayjs.locale("<%=System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLower().Replace("-us",string.Empty)%>");
+        });
+    </script>
+    <% } %>
+    <% else if (System.Threading.Thread.CurrentThread.CurrentUICulture.Name == "pl")
+        { %>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/i18n/grid.locale-pl.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/i18n/datepicker-pl.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/i18n/jquery-ui-timepicker-pl.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/locales/pl.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/i18n/defaults-pl_PL.min.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/node_modules/dayjs/locale/pl.js") %>"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            numeral.locale("pl");
+
+            dayjs.locale("<%=System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLower()%>");
+        });
+    </script>
+    <% } %>
+    <% else
+        { %>
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/i18n/grid.locale-tw.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/i18n/datepicker-zh-TW.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/i18n/jquery-ui-timepicker-zh-TW.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/locales/zh-TW.js") %>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/Scripts/i18n/defaults-zh_TW.min.js")%>"></script>
+
+    <script type="text/javascript" src="<%#ResolveClientUrl(@"~/node_modules/dayjs/locale/zh-tw.js") %>"></script>
+    <script type="text/javascript">
+        $(function () {
+            dayjs.locale("<%=System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLower()%>");
+        });
+    </script>
+    <% } %>
+
+    <asp:ContentPlaceHolder ID="MasterSelfHead" runat="server">
+        <% if (false)
+            { %>
+        <script type="text/javascript" src="Scripts/jquery-2.1.0-vsdoc.js"></script>
+        <% } %>
+        <script type="text/javascript">
+
+            var JqGridParameterObject = {
+                ListID: "JQContainerList",
+                TableID: "JQContainerListTable",
+                PagerID: "JQContainerListPager"
+            };
+
+            $(function () {
+
+                dayjs.extend(window.dayjs_plugin_customParseFormat);
+                dayjs.extend(window.dayjs_plugin_localizedFormat);
+
+                $.fn.selectpicker.Constructor.BootstrapVersion = "3";
+
+                $.fn.fileinput.defaults.language = $.cookie("langCookie");
+                $.fn.fileinput.defaults.browseClass = "btn btn-info";
+
+                $.jgrid.defaults.datatype = "local";
+                $.jgrid.defaults.styleUI = "Bootstrap";
+                $.jgrid.defaults.height = "auto";
+                $.jgrid.defaults.autowidth = true;
+                $.jgrid.defaults.responsive = true;
+                $.jgrid.defaults.loadonce = true;
+                $.jgrid.defaults.gridview = true;
+                $.jgrid.defaults.rowNum = 20;
+                $.jgrid.defaults.rowList = [10, 20, 30, 50, 100, 100000000];
+                $.jgrid.defaults.viewrecords = true;
+                $.jgrid.defaults.rownumbers = true;
+                $.jgrid.defaults.hidegrid = false;
+                $.jgrid.styleUI.Bootstrap.base.rowTable = "table table-bordered table-striped";
+
+                $.Main.Defaults.AjaxAlertMessage.ResponseText = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_AjaxAlertMessageResponseText") %>";
+                $.Main.Defaults.AjaxAlertMessage.TitleBarText = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_AjaxAlertMessageTitleBarText") %>";
+                $.Main.Defaults.AjaxAlertMessage.TitleBarImg = "<%=  ResolveClientUrl(@"~/Image/Alert.png")%>";
+                $.Main.Defaults.AjaxAlertMessage.DefaultMessage = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_AjaxAlertMessageDefaultMessage") %>";
+
+                $.Main.Defaults.VerificationDataDefaults.Message = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_VerificationDataDefaultsMessage") %>";
+                $.Main.Defaults.VerificationDataDefaults.TitleBarText = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_VerificationDataDefaultsTitleBarText") %>";
+                $.Main.Defaults.VerificationDataDefaults.TitleBarImg = "<%= ResolveClientUrl(@"~/Image/UserLock.png") %>";
+                $.Main.Defaults.VerificationDataDefaults.HomeAddress = "<%= HomeAddress %>";
+
+                $.Main.Defaults.ShowLoading.loaderImg = "<%= ResolveClientUrl(@"~/Image/loader.gif") %>";
+                $.Main.Defaults.ShowLoading.loader2Img = "<%= ResolveClientUrl(@"~/Image/loader2.gif") %>";
+
+                $.Main.Defaults.ConfirmMessage.TitleBarText = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_ConfirmMessageTitleBarText") %>";
+                $.Main.Defaults.ConfirmMessage.CancelButtonsText = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_ConfirmMessageCancelButtonsText") %>";
+                $.Main.Defaults.ConfirmMessage.ConfirmButtonsText = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_ConfirmMessageConfirmButtonsText") %>";
+                $.Main.Defaults.ConfirmMessage.TitleBarImg = "<%= ResolveClientUrl(@"~/Image/Alert_Info.png") %>";
+
+                $.Main.Defaults.AlertMessage.TitleBarText = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_AlertMessageTitleBarText") %>";
+                $.Main.Defaults.AlertMessage.ButtonsText = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_AlertMessageButtonsText") %>";
+                $.Main.Defaults.AlertMessage.TitlebarClosetTitlt = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_AlertMessageTitlebarClosetTitlt") %>";
+                $.Main.Defaults.AlertMessage.TitleBarImg = "<%= ResolveClientUrl(@"~/Image/Alert_Info.png") %>";
+
+                $.Main.Defaults.OpenOrganizationTreeView.TitleBarText = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_OrgTitleBarText") %>";
+                $.Main.Defaults.OpenOrganizationTreeView.ButtonsText = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_OrgButtonsText") %>";
+                $.Main.Defaults.OpenOrganizationTreeView.CancelButtonsText = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_OrgCancelButtonsText") %>";
+                $.Main.Defaults.OpenOrganizationTreeView.TitleBarImg = "<%= ResolveClientUrl(@"~/Image/view_tree.png") %>";
+                $.Main.Defaults.OpenOrganizationTreeView.WebPath = "<%= ResolveClientUrl(@"~/OrganizationTreeView.aspx") %>";
+
+                $.Main.Defaults.OpenPage.TitlebarTitle = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_OpenPageTitlebarTitle") %>";
+
+                $.Main.Defaults.DownloadFile.TitleBarText = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_DownloadFileTitleBarText") %>";
+                $.Main.Defaults.DownloadFile.TitleBarImg = "<%= ResolveClientUrl(@"~/Image/Alert_Info.png") %>";
+                $.Main.Defaults.DownloadFile.FailMessageText = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_DownloadFileFailMessageText") %>";
+                $.Main.Defaults.DownloadFile.WaitTitleText = "<%= (string)GetGlobalResourceObject("GlobalRes","Str_DownloadFileWaitTitleText") %>";
+
+                $(document).on("keydown", ".readonly", function (e) {
+                    var keyCode = e.keyCode || e.which;
+                    if (keyCode != 9)
+                        e.preventDefault();
+                });
+
+                $("form,input,select,textarea").attr("autocomplete", "off").attr("style", "resize:none");
+
+                $("ul.nav > li.active > a").addClass("active");
+
+                $("[data-toggle=tooltip]").tooltip();
+
+                SetMumberType();
+
+                SetDateDatepicker();
+
+                SetSelectDept();
+
+                SetSelectAccount();
+
+                LoadGridData();
+            });
+
+            function SetMumberType() {
+                $.each($(".MumberType"), function (i, item) {
+                    var MinValue = 0;
+                    var MaxValue = 999999999;
+                    var Decimals = 0;
+                    var Step = 1;
+                    var Postfix = "";
+
+                    /* Jquery data 的存取只能用小寫，為了兼顧閱讀性，所以寫法有大小寫，但是統一轉成小寫 */
+
+                    if ($(item).data("MumberTypeLimitMinValue".toLowerCase()) != null)
+                        MinValue = parseFloat($(item).data("MumberTypeLimitMinValue".toLowerCase()));
+                    if ($(item).data("MumberTypeLimitMaxValue".toLowerCase()) != null)
+                        MaxValue = parseFloat($(item).data("MumberTypeLimitMaxValue".toLowerCase()));
+                    if ($(item).data("MumberTypeDecimals".toLowerCase()) != null)
+                        Decimals = parseFloat($(item).data("MumberTypeDecimals".toLowerCase()));
+                    if ($(item).data("MumberTypeStep".toLowerCase()) != null)
+                        Step = parseFloat($(item).data("MumberTypeStep".toLowerCase()));
+                    if ($(item).data("Postfix".toLowerCase()) != null)
+                        Postfix = $(item).data("Postfix".toLowerCase());
+
+                    $(item).TouchSpin({
+                        min: MinValue,
+                        max: MaxValue,
+                        forcestepdivisibility: "none",
+                        decimals: Decimals,
+                        step: Step,
+                        postfix: Postfix,
+                    }).change(function () {
+                        $(this).removeClass("MumberTypeOverValue");
+
+                        if ($(this).data("MumberTypeMaxValue".toLowerCase()) != null && parseFloat($(this).val()) > parseFloat($(this).data("MumberTypeMaxValue".toLowerCase())))
+                            $(this).addClass("MumberTypeOverValue");
+                        else if ($(this).data("MumberTypeMinValue".toLowerCase()) != null && parseFloat($(this).val()) < parseFloat($(this).data("MumberTypeMinValue".toLowerCase())))
+                            $(this).addClass("MumberTypeOverValue");
+                    });
+                });
+            }
+
+            function SetDateDatepicker() {
+                $(".MonthsDatepicker").css("cursor", "pointer").datepicker({
+                    dateFormat: "yy/mm",
+                    changeMonth: true,
+                    changeYear: true,
+                    showButtonPanel: true,
+                    onClose: function (dateText, inst) {
+                        $(this).datepicker("setDate", new Date(inst.selectedYear, inst.selectedMonth, 1));
+                    },
+                    onUpdateDatepicker: function (input, inst) {
+                        $(".ui-datepicker-calendar").hide();
+                    }
+                }).unbind("click").click(function (e) {
+                    $(this).datepicker("show");
+                });
+
+                $(".DateDatepicker").css("cursor", "pointer").datepicker({
+                    //dateFormat: "yy/mm/dd",
+                    changeMonth: true,
+                    changeYear: true,
+                    numberOfMonths: 3,
+                    showButtonPanel: true
+                }).unbind("click").click(function (e) {
+                    $(this).datepicker("show");
+                });
+
+                $(".DateTimeDatepicker").css("cursor", "pointer").datetimepicker({
+                    /*                    dateFormat: "yy/mm/dd",*/
+                    changeMonth: true,
+                    changeYear: true,
+                    numberOfMonths: 3,
+                    showButtonPanel: true,
+                    showSecond: true,
+                    timeFormat: "HH:mm:ss"
+                }).unbind("click").click(function (e) {
+                    $(this).datetimepicker("show");
+                });
+
+                $(".TimeDatepicker").css("cursor", "pointer").timepicker({
+                    timeFormat: "HH:mm:ss"
+                }).unbind("click").click(function (e) {
+                    $(this).datetimepicker("show");
+                });
+
+                $(".ClearDate").click(function (e) {
+                    if ($(this).closest(".input-group").find(".DateDatepicker,.DateTimeDatepicker,.TimeDatepicker,.MonthsDatepicker").length > 0)
+                        $.datepicker._clearDate($(this).closest(".input-group").find(".DateDatepicker,.DateTimeDatepicker,.TimeDatepicker,.MonthsDatepicker"));
+                });
+
+                $(".DateValueThousand").click(function (e) {
+                    if ($(this).closest(".input-group").find(".DateDatepicker,.DateTimeDatepicker").length > 0)
+                        $(this).closest(".input-group").find(".DateDatepicker,.DateTimeDatepicker").val(GetDateValueThousandValue().format("L"));
+                });
+
+                $(".ClearText").click(function (e) {
+                    if ($(this).closest(".input-group").find("[type=\"text\"],textarea").length > 0)
+                        $(this).closest(".input-group").find("[type=\"text\"],textarea").val("");
+                });
+            }
+
+            function SetSelectDept() {
+                $(".SelectDept").click(function () {
+                    if ($(this).hasClass("SelectDeptDisabled") && !$(this).hasClass("NoNeedDisabled"))
+                        return;
+                    var ControlObject = $(this).parent().find("input.SelectDept");
+                    var HiddenField = $(this).parent().find("input.DeptID");
+
+                    if (ControlObject.length < 1)
+                        ControlObject = $(this).parent().find("textarea.SelectDept");
+
+                    var DefaultSelectedByDept = HiddenField.val();
+                    var SelectMode = ControlObject.hasClass("MultiSelect") ? 2 : 1;
+                    var ShowSearchArea = ControlObject.hasClass("ShowSearchArea");
+                    var IsShowSpecialdArea = ControlObject.hasClass("ShowSpecialdArea");
+
+                    var iFrameOpenParameters = { DefaultSelectedByDept: DefaultSelectedByDept, minExpandLevel: 2, SelectMode: 1, IsShowSearchArea: ShowSearchArea, IsShowSpecialdArea: IsShowSpecialdArea, SelectMode: SelectMode, ShowOrgType: 2 };
+                    $.OpenOrganizationTreeView({
+                        width: 550,
+                        height: 600,
+                        TitleBarText: $.Main.Defaults.OpenOrganizationTreeView.TitleBarText,
+                        iFrameOpenParameters: iFrameOpenParameters, CloseEvent: function (Result) {
+                            if (Result.SelectNodesDeptIDArray.length > 0 && Result.SelectNodesDeptFullNameArray.length > 0) {
+                                if (ControlObject.is("input"))
+                                    ControlObject.val(Result.SelectNodesDeptFullNameArray.join("、"));
+                                else
+                                    ControlObject.val(Result.SelectNodesDeptFullNameArray.join("\r\n"));
+                                HiddenField.val(Result.SelectNodesDeptIDArray.join("|"));
+                            }
+                            else {
+                                ControlObject.val("");
+                                HiddenField.val("");
+                            }
+
+                            try {
+                                if (typeof (eval(SelectDeptCallBack)) == "function") {
+                                    SelectDeptCallBack();
+                                }
+                            } catch (e) {
+
+                            }
+                        }
+                    });
+                });
+            }
+
+            function SetSelectAccount() {
+                $(".SelectAccount").click(function () {
+                    if ($(this).hasClass("SelectAccountDisabled") && !$(this).hasClass("NoNeedDisabled"))
+                        return;
+                    var ControlObject = $(this).parent().find("input.SelectAccount");
+                    var HiddenField = $(this).parent().find("input.AccountID");
+
+                    if (ControlObject.length < 1)
+                        ControlObject = $(this).parent().find("textarea.SelectAccount");
+
+                    var DefaultSelectedByUser = HiddenField.val();
+                    var SelectMode = ControlObject.hasClass("MultiSelect") ? 2 : 1;
+                    var ShowSearchArea = ControlObject.hasClass("ShowSearchArea");
+                    var IsShowSpecialdArea = ControlObject.hasClass("ShowSpecialdArea");
+
+                    var iFrameOpenParameters = { DefaultSelectedByUser: DefaultSelectedByUser, minExpandLevel: 2, SelectMode: 1, IsShowSearchArea: ShowSearchArea, IsShowSpecialdArea: IsShowSpecialdArea, SelectMode: SelectMode, IsHideDeptSelect: true };
+                    $.OpenOrganizationTreeView({
+                        width: 600,
+                        height: 700,
+                        TitleBarText: $.Main.Defaults.OpenOrganizationTreeView.TitleBarText,
+                        iFrameOpenParameters: iFrameOpenParameters, CloseEvent: function (Result) {
+                            if (Result.SelectNodeAccountIDArray.length > 0 && Result.SelectNodeAccountNameArray.length > 0) {
+                                if (ControlObject.is("input"))
+                                    ControlObject.val(Result.SelectNodeAccountNameArray.join("、"));
+                                else
+                                    ControlObject.val(Result.SelectNodeAccountNameArray.join("\r\n"));
+                                HiddenField.val(Result.SelectNodeAccountIDArray.join("|"));
+                            }
+                            else {
+                                ControlObject.val("");
+                                HiddenField.val("");
+                            }
+
+                            try {
+                                if (typeof (eval(SelectAccountCallBack)) == "function") {
+                                    SelectAccountCallBack();
+                                }
+                            } catch (e) {
+
+                            }
+                        }
+                    });
+                });
+            }
+
+            function LoadGridData(ParameterObject) {
+                var PO = $.extend(true, [], JqGridParameterObject);
+
+                if (ParameterObject != null) {
+                    if (!ParameterObject.hasOwnProperty("IsExtendJqGridParameterObject") || ParameterObject.IsExtendJqGridParameterObject)
+                        PO = $.extend(true, PO, ParameterObject);
+                    else
+                        PO = ParameterObject;
+                }
+
+                var data = null;
+
+                if (PO.hasOwnProperty("JQGridDataValue"))
+                    data = PO.JQGridDataValue
+                else if (typeof (JQGridDataValue) != "undefined") {
+                    data = JQGridDataValue;
+
+                    PO = $.extend(JqGridParameterObject, JQGridDataValue);
+                }
+
+                if (!PO.hasOwnProperty("JQGridDataValue"))
+                    PO.JQGridDataValue = data;
+
+                if (data == null)
+                    return;
+
+                if ($("#" + PO.ListID).length < 1)
+                    return;
+
+                $("#" + PO.ListID).children().remove();
+
+                $("#" + PO.ListID).append("<table id=\"" + PO.TableID + "\"></table><div id=\"" + PO.PagerID + "\"></div>");
+
+                var colModel = typeof data.colModel != "object" ? $.parseJSON(data.colModel) : data.colModel;
+
+                if (data.hasOwnProperty("FilterDateTimeColumnNames")) {
+                    $.each(colModel, function (Index, Item) {
+                        var FilterSelectColumn = $.grep(data.FilterDateTimeColumnNames, function (FCN) {
+                            return FCN === Item.name;
+                        });
+
+                        if (FilterSelectColumn.length > 0) {
+                            colModel[Index].searchoptions.dataInit = function (elem) {
+                                $(elem).css("cursor", "pointer").datepicker({
+                                    dateFormat: 'yy/mm/dd',
+                                    changeMonth: true,
+                                    changeYear: true,
+                                    numberOfMonths: 3,
+                                    showButtonPanel: true
+                                }).unbind("click").click(function (e) {
+                                    $(this).datepicker("show");
+                                });
+                            }
+                        }
+                    });
+                }
+
+                if (typeof (LoadGridDataCustomColModel) != "undefined" && $.isFunction(LoadGridDataCustomColModel))
+                    colModel = LoadGridDataCustomColModel(PO, colModel);
+
+                var groupingView = null;
+
+                if (typeof (data.groupingView) != "undefined")
+                    groupingView = typeof data.groupingView != "object" ? $.parseJSON(data.groupingView) : data.groupingView;
+
+                var Rows = typeof data.Rows != "object" ? $.parseJSON(data.Rows) : data.Rows;
+
+                var IsMultiSelect = false;
+
+                if (!PO.hasOwnProperty("IsMultiSelect") && typeof (IsMultiSelectValue) != "undefined")
+                    IsMultiSelect = $.StringConvertBoolean(IsMultiSelectValue);
+                else if (PO.hasOwnProperty("IsMultiSelect"))
+                    IsMultiSelect = PO.IsMultiSelect;
+
+                var IsSortable = true;
+
+                if (!PO.hasOwnProperty("IsSortable") && typeof (IsSortableValue) != "undefined")
+                    IsSortable = $.StringConvertBoolean(IsSortableValue);
+                else if (PO.hasOwnProperty("IsSortable"))
+                    IsSortable = PO.IsSortable;
+
+                var IsShrinkToFit = true;
+
+                if (!PO.hasOwnProperty("IsShrinkToFit") && typeof (IsShrinkToFitValue) != "undefined")
+                    IsShrinkToFit = $.StringConvertBoolean(IsShrinkToFitValue);
+                else if (PO.hasOwnProperty("IsShrinkToFit"))
+                    IsShrinkToFit = PO.IsShrinkToFit
+
+                var IsShowJQGridPager = true;
+
+                if (!PO.hasOwnProperty("IsShowJQGridPager") && typeof (IsShowJQGridPagerValue) != "undefined")
+                    IsShowJQGridPager = $.StringConvertBoolean(IsShowJQGridPagerValue);
+                else if (PO.hasOwnProperty("IsShowJQGridPager"))
+                    IsShowJQGridPager = PO.IsShowJQGridPager;
+
+                var IsShowJQRowNumbers = true;
+
+                if (!PO.hasOwnProperty("IsShowJQRowNumbers") && typeof (IsShowJQRowNumbersValue) != "undefined")
+                    IsShowJQRowNumbers = $.StringConvertBoolean(IsShowJQRowNumbersValue);
+                else if (PO.hasOwnProperty("IsShowJQRowNumbers"))
+                    IsShowJQRowNumbers = PO.IsShowJQRowNumbers;
+
+                var RowNum = $.jgrid.defaults.rowNum;
+
+                if (!PO.hasOwnProperty("RowNum") && typeof (JQGridRowNumValue) != "undefined")
+                    RowNum = JQGridRowNumValue;
+                else if (PO.hasOwnProperty("RowNum"))
+                    RowNum = PO.RowNum
+
+                var IsShowSubGrid = false;
+
+                if (!PO.hasOwnProperty("IsShowSubGrid") && typeof (IsShowSubGridValue) != "undefined")
+                    IsShowSubGrid = $.StringConvertBoolean(IsShowSubGridValue);
+                else if (PO.hasOwnProperty("IsShowSubGrid"))
+                    IsShowSubGrid = PO.IsShowSubGrid;
+
+                var IsShowFooterRow = false;
+
+                if (!PO.hasOwnProperty("IsShowFooterRow") && typeof (IsShowFooterRowValue) != "undefined")
+                    IsShowFooterRow = $.StringConvertBoolean(IsShowFooterRowValue);
+                else if (PO.hasOwnProperty("IsShowFooterRow"))
+                    IsShowFooterRow = PO.IsShowFooterRow;
+
+                var IsShowHeaderRow = false;
+
+                if (!PO.hasOwnProperty("IsShowHeaderRow") && typeof (IsShowHeaderRowValue) != "undefined")
+                    IsShowHeaderRow = $.StringConvertBoolean(IsShowHeaderRowValue);
+                else if (PO.hasOwnProperty("IsShowHeaderRow"))
+                    IsShowHeaderRow = PO.IsShowHeaderRow;
+
+                var IsShowPagerSearch = false;
+
+                if (!PO.hasOwnProperty("IsShowPagerSearch") && typeof (IsShowPagerSearchValue) != "undefined")
+                    IsShowPagerSearch = $.StringConvertBoolean(IsShowPagerSearchValue);
+                else if (PO.hasOwnProperty("IsShowPagerSearch"))
+                    IsShowPagerSearch = PO.IsShowPagerSearch;
+
+                let SubGridOptions = {};
+
+                if (IsShowSubGrid) {
+                    SubGridOptions = {
+                        plusicon: "fa fa-hand-o-right",
+                        minusicon: "fa fa-hand-o-down"
+                    };
+                }
+
+                if (groupingView != null) {
+                    groupingView.plusicon = "fa fa-hand-o-right";
+                    groupingView.minusicon = "fa fa-hand-o-down";
+                }
+
+                if (typeof (JqEventBind) != "undefined" && $.isFunction(JqEventBind))
+                    JqEventBind(PO);
+
+                var JqGridObject = $("#" + PO.TableID).jqGrid({
+                    data: Rows,
+                    colModel: colModel,
+                    multiSort: true,
+                    multiselect: IsMultiSelect,
+                    sortable: IsSortable,
+                    rownumbers: IsShowJQRowNumbers,
+                    pager: IsShowJQGridPager ? "#" + PO.PagerID : "",
+                    shrinkToFit: IsShrinkToFit,
+                    rowNum: RowNum,
+                    subGrid: IsShowSubGrid,
+                    headerrow: IsShowHeaderRow,
+                    userDataOnHeader: IsShowHeaderRow,
+                    footerrow: IsShowFooterRow,
+                    grouping: groupingView != null ? true : false,
+                    groupingView: groupingView,
+                    subGridRowExpanded: (IsShowSubGrid && (typeof JqSubGridRowExpandedEvent === "function")) ? JqSubGridRowExpandedEvent : null,
+                    isHasSubGrid: (IsShowSubGrid && (typeof JqHasSubGridRowFunction === "function")) ? JqHasSubGridRowFunction : null,
+                    subGridOptions: IsShowSubGrid ? SubGridOptions : null,
+                    loadComplete: function (data) { $("#" + PO.PagerID + " option[value=100000000]").text("ALL"); }
+                });
+
+                if (!PO.hasOwnProperty("IsShowJQGridFilterToolbar") && typeof (IsShowJQGridFilterToolbar) != "undefined")
+                    PO.IsShowJQGridFilterToolbar = $.StringConvertBoolean(IsShowJQGridFilterToolbar);
+
+                if (PO.hasOwnProperty("IsShowJQGridFilterToolbar") && PO.IsShowJQGridFilterToolbar)
+                    JqGridObject.jqGrid("filterToolbar", { searchOperators: true, stringResult: true, searchOnEnter: false, defaultSearch: "cn" });
+
+                var NavButtonList = new Array();
+
+                if (!PO.hasOwnProperty("NavButton") && typeof (NavButton) != "undefined")
+                    NavButtonList = NavButton;
+                else if (PO.hasOwnProperty("NavButton"))
+                    NavButtonList = PO.NavButton;
+
+                if (IsShowPagerSearch) {
+                    JqGridObject.navGrid("#" + PO.PagerID, {
+                        search: true,
+                        add: false,
+                        edit: false,
+                        del: false,
+                        refresh: true
+                    },
+                        {}, // edit options
+                        {}, // add options
+                        {}, // delete options
+                        { multipleSearch: true, multipleGroup: true }
+                    );
+                }
+                else if (NavButtonList.length > 0) {
+                    JqGridObject.navGrid("#" + PO.PagerID, { search: false, add: false, edit: false, del: false, refresh: false });
+
+                    $.each(NavButtonList, function (key, item) {
+                        JqGridObject.jqGrid("navButtonAdd", "#" + PO.PagerID, item);
+                    });
+                }
+
+                JqGridObject.trigger("resize");
+
+                return JqGridObject;
+            }
+
+            function GetDateValueThousandValue() {
+
+                return dayjs(NowtDate, "L").add(1000, "year");
+            }
+        </script>
+
+        <style type="text/css">
+            /* 因為 dialog 的 Z-indx 比 admin2的一樣導致  dialog 出的視窗與遮罩在後面 */
+            .ui-widget-overlay {
+                z-index: 1000;
+            }
+
+            .ui-dialog {
+                z-index: 1001 !important;
+            }
+
+            /* 因為有可能日曆被其他控制項給遮住 */
+            .ui-datepicker {
+                z-index: 2001 !important;
+            }
+        </style>
+    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="MasterHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="MasterForm" runat="server">
+        <asp:ContentPlaceHolder ID="ContentPage" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+    <asp:ContentPlaceHolder ID="MasterFooterHead" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

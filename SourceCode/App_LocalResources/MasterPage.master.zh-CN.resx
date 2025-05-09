@@ -1,0 +1,595 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Str_MenuBar_Electrophoresis_CleanRecord" xml:space="preserve">
+    <value>电泳线槽清洁记录</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_CleanRecord_Calendar" xml:space="preserve">
+    <value>清洁记录</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Complex" xml:space="preserve">
+    <value>磷化液配制记录</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Complex_ComplexB" xml:space="preserve">
+    <value>磷化B剂</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Complex_ComplexC" xml:space="preserve">
+    <value>磷化C剂</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Module" xml:space="preserve">
+    <value>电泳参数管理模组</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter" xml:space="preserve">
+    <value>参数管理</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_Anolyte" xml:space="preserve">
+    <value>阳极液</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_Chart" xml:space="preserve">
+    <value>统计图表</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_CoatingTestForPD" xml:space="preserve">
+    <value>PD内部测试</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_Degreasing" xml:space="preserve">
+    <value>脱脂</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_PreDegreasing" xml:space="preserve">
+    <value>预脱脂</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_UltrasonicDegreasing1" xml:space="preserve">
+    <value>超声波脱脂1</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_UltrasonicDegreasing2" xml:space="preserve">
+    <value>超声波脱脂2</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_ECoating" xml:space="preserve">
+    <value>电泳</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_ECoatingAndUF" xml:space="preserve">
+    <value>电泳&amp;超滤</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_HCL" xml:space="preserve">
+    <value>酸洗</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_HCL1" xml:space="preserve">
+    <value>HCL1</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_HCL2" xml:space="preserve">
+    <value>HCL2</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_Neutralizing" xml:space="preserve">
+    <value>中和</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_Phosphating" xml:space="preserve">
+    <value>磷化</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_RecordOfCoatingTest" xml:space="preserve">
+    <value>漆膜性能测试</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_SurfaceActivation" xml:space="preserve">
+    <value>表调</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_SurfaceActivationAndPhosphating" xml:space="preserve">
+    <value>表调&amp;磷化</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_UF1" xml:space="preserve">
+    <value>UF1</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_UF2" xml:space="preserve">
+    <value>UF2</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_RecycleTank" xml:space="preserve">
+    <value>UF辅槽</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_WaterRinsing" xml:space="preserve">
+    <value>水洗</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_TopMenu_ChangePassword" xml:space="preserve">
+    <value>变更密码</value>
+  </data>
+  <data name="Str_TopMenu_Logout" xml:space="preserve">
+    <value>登出</value>
+  </data>
+  <data name="Str_TopMenu_UserMenu" xml:space="preserve">
+    <value>使用手册</value>
+  </data>
+  <data name="Str_MenuBar_AMD" xml:space="preserve">
+    <value>后台管理</value>
+    <comment>後台管理</comment>
+  </data>
+  <data name="Str_MenuBar_AMD_SettingUserManage" xml:space="preserve">
+    <value>使用者管理</value>
+    <comment>後台管理</comment>
+  </data>
+  <data name="Str_MenuBar_AMD_SettingOnLineUserList" xml:space="preserve">
+    <value>线上人员列表</value>
+    <comment>後台管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_Curing" xml:space="preserve">
+    <value>固化</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_Combustor" xml:space="preserve">
+    <value>燃烧室</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_Zone1Fan1" xml:space="preserve">
+    <value>前段-风机1</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_Electrophoresis_Parameter_Zone2Fan2" xml:space="preserve">
+    <value>内部-风机2</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_DevicePrint" xml:space="preserve">
+    <value>机台卡列印</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_BaseRouting" xml:space="preserve">
+    <value>工序设定</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_Module" xml:space="preserve">
+    <value>报工模组</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_TicketLifeCycle" xml:space="preserve">
+    <value>查詢流程卡</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_MOSearch" xml:space="preserve">
+    <value>查看工单</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_MaintainDevice" xml:space="preserve">
+    <value>设备维护</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_MaintainDeviceGroup" xml:space="preserve">
+    <value>设备群组维护</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_003" xml:space="preserve">
+    <value>报工资料汇出</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_MaintainDefect" xml:space="preserve">
+    <value>维护缺陷代码</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_MaintainScrapReasonMappingDefect" xml:space="preserve">
+    <value>维护报废原因对应表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_MaintainFault" xml:space="preserve">
+    <value>维护故障代码</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_MaintainFaultCategory" xml:space="preserve">
+    <value>维护故障分类</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_004" xml:space="preserve">
+    <value>工单状态一览表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_MaintainFaultMappingList" xml:space="preserve">
+    <value>维护故障分类对应</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_TickResultWithoutApprovedList" xml:space="preserve">
+    <value>未审批报工资料</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_StandardMinuteList" xml:space="preserve">
+    <value>报工资料标准时间参数表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_TicketParameter" xml:space="preserve">
+    <value>维护流程卡打印参数</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_TicketReWorkNotEndSearch" xml:space="preserve">
+    <value>未关结返工单</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_005" xml:space="preserve">
+    <value>报废清单</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_006" xml:space="preserve">
+    <value>维修清单</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_007" xml:space="preserve">
+    <value>返工缺陷代码清单</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_TicketQuarantineNotJudgmentSearch" xml:space="preserve">
+    <value>未判定隔离单</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_TicketCurrStatus" xml:space="preserve">
+    <value>当前进工中流程卡</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_MOInProduction" xml:space="preserve">
+    <value>未关结工单</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_TicketReWorkEfficiency" xml:space="preserve">
+    <value>返工单执行效率</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_009" xml:space="preserve">
+    <value>OEE报表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_009_Chart" xml:space="preserve">
+    <value>OEE图表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_011" xml:space="preserve">
+    <value>每日返工报废异常表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_ParameterManage" xml:space="preserve">
+    <value>参数维护</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_ProductionVersionGroup" xml:space="preserve">
+    <value>维护生产版本群组</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_ProductionTaskList" xml:space="preserve">
+    <value>维护生产任务</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_DailyReportForProduction" xml:space="preserve">
+    <value>生产日报</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_012" xml:space="preserve">
+    <value>流程卡结批效率表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_013" xml:space="preserve">
+    <value>每日产出报表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_015" xml:space="preserve">
+    <value>批号管制表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_017" xml:space="preserve">
+    <value>结存数量统计表</value>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_018" xml:space="preserve">
+    <value>月产量报表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_019" xml:space="preserve">
+    <value>HR薪资数量统计表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_Report" xml:space="preserve">
+    <value>统计报表</value>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_WorkHourException" xml:space="preserve">
+    <value>维护非计件转出工时</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_WorkHour" xml:space="preserve">
+    <value>维护出勤工时</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_020" xml:space="preserve">
+    <value>转出效率报表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_021" xml:space="preserve">
+    <value>产品标签扫描统计表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_MATNRGroup" xml:space="preserve">
+    <value>维护物料群组</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_MATNRParameters" xml:space="preserve">
+    <value>维护物料参数</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_022" xml:space="preserve">
+    <value>工单报废率</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_023" xml:space="preserve">
+    <value>ED一次直通率(生产用)</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_DeviceParametersByED" xml:space="preserve">
+    <value>维护电泳设备参数</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_024" xml:space="preserve">
+    <value>返工良率</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_026" xml:space="preserve">
+    <value>设备功率表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_025" xml:space="preserve">
+    <value>电泳挂数表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_027" xml:space="preserve">
+    <value>在制品盘点清册</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_ParametersByPower" xml:space="preserve">
+    <value>维护电流功率</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_028" xml:space="preserve">
+    <value>隔离单初判数量统计表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_029" xml:space="preserve">
+    <value>电泳不良数据汇整表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_030" xml:space="preserve">
+    <value>其他报工数据统计表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_031" xml:space="preserve">
+    <value>机加/ED生产数据汇总表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_SupervisorWorkCenter" xml:space="preserve">
+    <value>维护干部对应工作中心</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_032" xml:space="preserve">
+    <value>HR薪资比例分摊统计表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_DailyReport" xml:space="preserve">
+    <value>查询工作日报</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_MaintainResponsible" xml:space="preserve">
+    <value>维护维修责任归属</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_DeliveryLocation" xml:space="preserve">
+    <value>维护交货地点</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_WM_Module" xml:space="preserve">
+    <value>仓管模组</value>
+    <comment>倉庫管理系統</comment>
+  </data>
+  <data name="Str_MenuBar_WM_PalletSearch" xml:space="preserve">
+    <value>栈板查询</value>
+    <comment>倉庫管理系統</comment>
+  </data>
+  <data name="Str_MenuBar_WM_RPT_002" xml:space="preserve">
+    <value>入库资料汇出</value>
+    <comment>倉庫管理系統</comment>
+  </data>
+  <data name="Str_MenuBar_WM_KUNNRVERID" xml:space="preserve">
+    <value>维护客户生产版本</value>
+    <comment>倉庫管理系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_033" xml:space="preserve">
+    <value>工单结批效率表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_034" xml:space="preserve">
+    <value>ED上挂返工数量统计表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_WM_PackingToOutside" xml:space="preserve">
+    <value>出库(厂外)</value>
+    <comment>倉庫管理系統</comment>
+  </data>
+  <data name="Str_MenuBar_WM_PackingInfo" xml:space="preserve">
+    <value>查看领料单(厂外)</value>
+    <comment>倉庫管理系統</comment>
+  </data>
+  <data name="Str_MenuBar_WM_PackingToInside" xml:space="preserve">
+    <value>出库(厂内)</value>
+    <comment>倉庫管理系統</comment>
+  </data>
+  <data name="Str_MenuBar_WM_PackingInfoByInside" xml:space="preserve">
+    <value>查看领料单(厂内)</value>
+    <comment>倉庫管理系統</comment>
+  </data>
+  <data name="Str_MenuBar_WM_RPT_005" xml:space="preserve">
+    <value>出库清單(厂外)</value>
+    <comment>倉庫管理系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_DailyReportForShift" xml:space="preserve">
+    <value>生產日報(班別)</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_Dashboard" xml:space="preserve">
+    <value>即时看版</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_TicketPrint" xml:space="preserve">
+    <value>流程卡补印</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_036" xml:space="preserve">
+    <value>工单完成百分比</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_MaintainIssue" xml:space="preserve">
+    <value>维护问题原因</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_MaintainIssueCategory" xml:space="preserve">
+    <value>维护问题类别</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_MaintainIssueCategoryMapping" xml:space="preserve">
+    <value>维护问题分类对应</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_RPT_037" xml:space="preserve">
+    <value>当班问题汇总表</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_MenuBar_TimeSheet_IssueReport" xml:space="preserve">
+    <value>报告当班问题</value>
+    <comment>報工系統</comment>
+  </data>
+</root>

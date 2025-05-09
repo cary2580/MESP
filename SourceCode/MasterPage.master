@@ -1,0 +1,853 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/NoFrame.master" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ MasterType VirtualPath="~/NoFrame.master" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MasterHead" runat="Server">
+    <script type="text/javascript">
+        $(function () {
+            /* 左邊Menu的nav-four-level點選後的處理，必須要把同一層的 ul > .nav-four-level 加入in class，不然會消失於畫面中 */
+            if ($(".sidebar-nav-all").find("li > a.active").length > 0) {
+                $(".sidebar-nav-all").find("li > a.active").closest(".nav-second-level").children("li").addClass("active");
+
+                $(".sidebar-nav-all").find("li > a.active").closest(".third-level-root").addClass("active");
+
+                $(".sidebar-nav-all").find("li > a.active").closest(".third-level-root").find("ul").addClass("in");
+
+                $(".sidebar-nav-all").find("li > a.active").closest(".nav-second-level").siblings("ul").addClass("in");
+            }
+
+            $(".language").click(function () {
+
+                $.cookie("langCookie", $(this).data("languageid"), { expires: dayjs(NowtDate, "L").add(7, "day").toDate(), path: "/" });
+
+                window.location.href = "<%= ResolveClientUrl(@"~/Index.aspx")%>";
+            });
+
+            $.each($(".dropdown-menu").find(".divider"), function (index, item) {
+                if ($(item).next("li").children().length < 1)
+                    $(item).remove();
+            });
+
+            if ($("#PageMenuName").html() == "") {
+                $("#PageMenuName").closest("div").append("<p></p>");
+                $("#PageMenuName").hide();
+            }
+
+            $("#LoginName").html($("#LoginName").html() + " Hi " + $("#AccountName").val());
+
+            $(".ChangePageWrapper").click(function () {
+                if ($(this).find(".fa").hasClass("fa-arrow-left")) {
+                    $(this).find(".fa").switchClass("fa-arrow-left", "fa-arrow-right");
+                    $(".sidebar").width(0);
+                    $(".sidebar-nav").width(50);
+                    $(".sidebar-nav-all").hide();
+                    $("#page-wrapper").addClass("page-wrapper");
+                    sessionStorage["IsHideMenuBar"] = "1";
+                }
+                else {
+                    $(this).find(".fa").switchClass("fa-arrow-right", "fa-arrow-left");
+                    $(".sidebar").width(250);
+                    $(".sidebar-nav").css("width", "auto");
+                    $(".sidebar-nav-all").show();
+                    $("#page-wrapper").removeClass("page-wrapper");
+                    sessionStorage["IsHideMenuBar"] = "0";
+                }
+
+                $(this).blur();
+
+                $(window).trigger("resize");
+            });
+
+            if ($.StringConvertBoolean(sessionStorage["IsHideMenuBar"]))
+                $(".ChangePageWrapper").trigger("click");
+        });
+    </script>
+    <style>
+        .page-wrapper {
+            margin: 0 0 0 50px !important;
+        }
+
+        .sidebar .nav-four-level li {
+            border-bottom: none !important;
+        }
+
+            .sidebar .nav-four-level li a {
+                padding-left: 62px;
+            }
+    </style>
+    <asp:ContentPlaceHolder ID="MasterHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPage" runat="Server">
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="<%= ResolveClientUrl(@"~/Index.aspx")%>">
+                    <img class="navbar-brand-logoimg" src="<%= ResolveClientUrl(@"~/Image/logo.png")%>" style="width: 130px; height: 47px;" /></a>
+                <% if (System.Threading.Thread.CurrentThread.CurrentUICulture.Name == "zh-CN")
+                    { %>
+                <img class="navbar-brand-logoimg" src="<%= ResolveClientUrl(@"~/Image/logo2.png")%>" />
+                <% } %>
+                <% else if (System.Threading.Thread.CurrentThread.CurrentUICulture.Name == "en-US")
+                    { %>
+                <img class="navbar-brand-logoimg" src="<%= ResolveClientUrl(@"~/Image/logo4.png")%>" />
+                <% } %>
+                <% else if (System.Threading.Thread.CurrentThread.CurrentUICulture.Name == "pl")
+                    { %>
+                <img class="navbar-brand-logoimg" src="<%= ResolveClientUrl(@"~/Image/logo4.png")%>" />
+                <% } %>
+                <% else
+                    { %>
+                <img class="navbar-brand-logoimg" src="<%= ResolveClientUrl(@"~/Image/logo3.png")%>" />
+                <% } %>
+            </div>
+            <% if (BaseConfiguration.IsTestEnvironment)
+                { %>
+            <div class="navbar-header">
+                <h3>Test Environment</h3>
+            </div>
+            <% } %>
+            <!-- /.navbar-header -->
+            <ul class="nav navbar-top-links navbar-right">
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a id="LoginName"><i class="fa fa-user fa-fw"></i></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a id="BT_ChangePassword" runat="server" href="~\ChangePassword.aspx"><i class="fa fa-lock fa-fw"></i>
+                            <asp:Literal runat="server" Text="<%$ Resources:Str_TopMenu_ChangePassword %>"></asp:Literal></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a id="BT_UserMenu" runat="server" target="_blank"><i class="fa fa-navicon fa-fw"></i>
+                            <asp:Literal runat="server" Text="<%$ Resources:Str_TopMenu_UserMenu %>"></asp:Literal></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a id="BT_Logout" href="<%= ResolveClientUrl(@"~/Logout.aspx")%>"><i class="fa fa-sign-out fa-fw"></i>
+                            <asp:Literal runat="server" Text="<%$ Resources:Str_TopMenu_Logout %>"></asp:Literal></a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-globe fa-fw"></i><i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a data-languageid="zh-TW" class="language" style="cursor: pointer">繁體中文</a>
+                        </li>
+                        <li><a data-languageid="zh-CN" class="language" style="cursor: pointer">簡體中文</a>
+                        </li>
+                        <li><a data-languageid="en-US" class="language" style="cursor: pointer">English</a>
+                        </li>
+                        <li><a data-languageid="pl" class="language" style="cursor: pointer">Polish</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /.navbar-top-links -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <div class="sidebar-nav-all">
+                        <ul class="nav" id="side-menu">
+                            <li id="MenuBarElectrophoresisModule" runat="server" visible="false">
+                                <a href="#"><i class="fa fa-bolt fa-fw"></i>
+                                    <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Module %>"></asp:Literal><span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="#" class="fa fa-bookmark">
+                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter %>"></asp:Literal><span class="fa arrow"></span></a>
+                                        <ul class="nav nav-third-level">
+                                            <li class="third-level-root">
+                                                <a href="#" class="fa fa-building">
+                                                    <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_Degreasing %>"></asp:Literal><span class="fa arrow"></span></a>
+                                                <ul class="nav nav-four-level collapse">
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_Calendar.aspx?MenuName=") + (
+                                                                    (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_Degreasing") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_PreDegreasing")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) + "&PIDType=" + "1".ToBase64String(true) %>"><i class="fa fa-shield fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_PreDegreasing %>"></asp:Literal></a>
+                                                    </li>
+                                                </ul>
+                                                <ul class="nav nav-four-level collapse">
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_Calendar.aspx?MenuName=") + (
+                                                                     (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_Degreasing") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_UltrasonicDegreasing1")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) + "&PIDType=" + "2".ToBase64String(true) %>"><i class="fa fa-shield fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_UltrasonicDegreasing1 %>"></asp:Literal></a>
+                                                    </li>
+                                                </ul>
+                                                <ul class="nav nav-four-level collapse">
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_Calendar.aspx?MenuName=") + (
+                                                                    (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_Degreasing") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_UltrasonicDegreasing2")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) + "&PIDType=" + "3".ToBase64String(true) %>"><i class="fa fa-shield fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_UltrasonicDegreasing2 %>"></asp:Literal></a>
+                                                    </li>
+                                                </ul>
+                                                <ul class="nav nav-four-level collapse">
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_PreDegreasingChart.aspx?MenuName=") + (
+                                                                     (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_Degreasing") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_Chart")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) %>"><i class="fa fa-bar-chart-o fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_Chart %>"></asp:Literal></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="third-level-root">
+                                                <a href="#" class="fa fa-tint">
+                                                    <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_HCL %>"></asp:Literal><span class="fa arrow"></span></a>
+                                                <ul class="nav nav-four-level collapse">
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_Calendar.aspx?MenuName=") + (
+                                                                     (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_HCL") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_HCL1")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) + "&PIDType=" + "4".ToBase64String(true) %>"><i class="fa fa-shield fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_HCL1 %>"></asp:Literal></a>
+                                                    </li>
+                                                </ul>
+                                                <ul class="nav nav-four-level collapse">
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_Calendar.aspx?MenuName=") + (
+                                                                    (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_HCL") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_HCL2")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) + "&PIDType=" + "5".ToBase64String(true) %>"><i class="fa fa-shield fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_HCL2 %>"></asp:Literal></a>
+                                                    </li>
+                                                </ul>
+                                                <ul class="nav nav-four-level collapse">
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_Calendar.aspx?MenuName=") + (
+                                                                    (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                     + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_HCL") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_Neutralizing")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) + "&PIDType=" + "6".ToBase64String(true) %>"><i class="fa fa-shield fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_Neutralizing %>"></asp:Literal></a>
+                                                    </li>
+                                                </ul>
+                                                <ul class="nav nav-four-level collapse">
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_HCLChart.aspx?MenuName=") + (
+                                                                     (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_HCL") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_Chart")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) %>"><i class="fa fa-bar-chart-o fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_Chart %>"></asp:Literal></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="third-level-root">
+                                                <a href="#"
+                                                    class="fa fa-recycle">
+                                                    <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_SurfaceActivationAndPhosphating %>"></asp:Literal><span class="fa arrow"></span></a>
+                                                <ul class="nav nav-four-level collapse">
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_Calendar.aspx?MenuName=") + (
+                                                                    (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_SurfaceActivationAndPhosphating")  + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_SurfaceActivation")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) + "&PIDType=" + "7".ToBase64String(true) %>"><i class="fa fa-shield fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_SurfaceActivation %>"></asp:Literal></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_Calendar.aspx?MenuName=") + (
+                                                                    (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_SurfaceActivationAndPhosphating")  + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_Phosphating")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) + "&PIDType=" + "8".ToBase64String(true) %>"><i class="fa fa-shield fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_Phosphating %>"></asp:Literal></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_SurfaceActivationChart.aspx?MenuName=") + (
+                                                                     (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_SurfaceActivationAndPhosphating") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_Chart")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) %>"><i class="fa fa-bar-chart-o fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_Chart %>"></asp:Literal></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="third-level-root">
+                                                <a href="#"
+                                                    class="fa fa-bolt">
+                                                    <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_ECoatingAndUF %>"></asp:Literal><span class="fa arrow"></span></a>
+                                                <ul class="nav nav-four-level collapse">
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_Calendar.aspx?MenuName=") + (
+                                                                    (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_ECoatingAndUF")  + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_ECoating")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) + "&PIDType=" + "9".ToBase64String(true) %>"><i class="fa fa-shield fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_ECoating %>"></asp:Literal></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_Calendar.aspx?MenuName=") + (
+                                                                    (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_ECoatingAndUF")  + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_UF1")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) + "&PIDType=" + "10".ToBase64String(true) %>"><i class="fa fa-shield fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_UF1 %>"></asp:Literal></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_Calendar.aspx?MenuName=") + (
+                                                                    (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_ECoatingAndUF")  + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_UF2")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) + "&PIDType=" + "11".ToBase64String(true) %>"><i class="fa fa-shield fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_UF2 %>"></asp:Literal></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_Calendar.aspx?MenuName=") + (
+                                                                    (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_ECoatingAndUF")  + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_Anolyte")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) + "&PIDType=" + "12".ToBase64String(true) %>"><i class="fa fa-shield fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_Anolyte %>"></asp:Literal></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_Calendar.aspx?MenuName=") + (
+                                                                    (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_ECoatingAndUF")  + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_RecycleTank")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) + "&PIDType=" + "13".ToBase64String(true) %>"><i class="fa fa-shield fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_RecycleTank %>"></asp:Literal></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_ECoatingChart.aspx?MenuName=") + (
+                                                                     (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_ECoatingAndUF") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_Chart")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) %>"><i class="fa fa-bar-chart-o fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_Chart %>"></asp:Literal></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="third-level-root">
+                                                <a href="#"
+                                                    class="fa fa-paragraph">
+                                                    <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_WaterRinsing %>"></asp:Literal><span class="fa arrow"></span></a>
+                                                <ul class="nav nav-four-level collapse">
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_Calendar.aspx?MenuName=") + (
+                                                                    (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_WaterRinsing")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) + "&PIDType=" + "14".ToBase64String(true) %>"><i class="fa fa-shield fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_WaterRinsing %>"></asp:Literal></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_WaterRinsingChart.aspx?MenuName=") + (
+                                                                     (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_WaterRinsing") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_Chart")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) %>"><i class="fa fa-bar-chart-o fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_Chart %>"></asp:Literal></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="third-level-root">
+                                                <a href="#"
+                                                    class="fa fa-codepen">
+                                                    <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_Curing %>"></asp:Literal><span class="fa arrow"></span></a>
+                                                <ul class="nav nav-four-level collapse">
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_Calendar.aspx?MenuName=") + (
+                                                                    (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_Curing")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) + "&PIDType=" + "16".ToBase64String(true) %>"><i class="fa fa-shield fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_Curing %>"></asp:Literal></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_CuringChart.aspx?MenuName=") + (
+                                                                     (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_Chart")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) %>"><i class="fa fa-bar-chart-o fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_Chart %>"></asp:Literal></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="third-level-root">
+                                                <a href="#"
+                                                    class="fa fa-magic">
+                                                    <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_RecordOfCoatingTest %>"></asp:Literal><span class="fa arrow"></span></a>
+                                                <ul class="nav nav-four-level collapse">
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_Calendar.aspx?MenuName=") + (
+                                                                    (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_RecordOfCoatingTest")  + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_CoatingTestForPD")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) + "&PIDType=" + "15".ToBase64String(true) %>"><i class="fa fa-shield fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_CoatingTestForPD %>"></asp:Literal></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="<%= ResolveClientUrl(@"~/ED/P_CoatingTestForPDChart.aspx?MenuName=") + (
+                                                                     (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_WaterRinsing") + "/" 
+                                                                    + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter_Chart")
+                                                                    ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) %>"><i class="fa fa-bar-chart-o fa-fw"></i>
+                                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Parameter_Chart %>"></asp:Literal></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="#" class="fa fa-calendar-o">
+                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_CleanRecord %>"></asp:Literal><span class="fa arrow"></span></a>
+                                        <ul class="nav nav-third-level">
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/ED/C_Calendar.aspx?MenuName=") + (
+                                                             (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                            + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_CleanRecord") + "/" 
+                                                            + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_CleanRecord_Calendar")
+                                                            ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) %>"><i class="fa fa-table fa-fw"></i>
+                                                    <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_CleanRecord_Calendar %>"></asp:Literal></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="#" class="fa fa-cubes">
+                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Complex %>"></asp:Literal><span class="fa arrow"></span></a>
+                                        <ul class="nav nav-third-level">
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/ED/F_PhosphatingAgentB.aspx?MenuName=") + (
+                                                             (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                            + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Complex") + "/" 
+                                                            + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Complex_ComplexB")
+                                                            ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) %>"><i class="fa fa-cube fa-fw"></i>
+                                                    <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Complex_ComplexB %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/ED/F_PhosphatingAgentC.aspx?MenuName=") + (
+                                                            (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Parameter") + "/" 
+                                                            + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Complex") + "/" 
+                                                            + (string)GetLocalResourceObject("Str_MenuBar_Electrophoresis_Complex_ComplexC")
+                                                            ).ToBase64String(true) + "&Module="+"ED".ToBase64String(true) %>"><i class="fa fa-cube fa-fw"></i>
+                                                    <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_Electrophoresis_Complex_ComplexC %>"></asp:Literal></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="MenuBarTimeSheetModule" runat="server">
+                                <a href="#"><i class="fa fa-group fa-fw"></i>
+                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_Module %>"></asp:Literal><span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/DailyReportForProduction.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-line-chart fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_DailyReportForProduction %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/DailyReportForShift.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-tags fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_DailyReportForShift %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/MOSearch.aspx?ViewInside=") + true.ToStringValue().ToBase64String(true)  + "&Module="+"TS".ToBase64String(true) %>"><i class="fa fa-tasks fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_MOSearch %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/MOInProduction.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-arrows-alt fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_MOInProduction %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/TicketReWorkNotEndSearch.aspx?Module=") + "TS".ToBase64String(true) %>"><i class="fa fa-share-square-o fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_TicketReWorkNotEndSearch %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/TicketQuarantineNotJudgmentSearch.aspx?Module=") + "TS".ToBase64String(true) %>"><i class="fa fa-shield fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_TicketQuarantineNotJudgmentSearch %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/TickResultWithoutApprovedList.aspx?ViewInside=") + true.ToStringValue().ToBase64String(true)  + "&Module="+"TS".ToBase64String(true)  %>"><i class="fa fa-sign-out fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_TickResultWithoutApprovedList %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/TicketReWorkEfficiency.aspx?Module=") + "TS".ToBase64String(true) %>"><i class="fa fa-puzzle-piece fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_TicketReWorkEfficiency %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/TicketCurrStatus.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-ioxhost fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_TicketCurrStatus %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/TicketLifeCycle.aspx?ViewInside=") + true.ToStringValue().ToBase64String(true)  + "&Module="+"TS".ToBase64String(true)  %>"><i class="fa fa-search fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_TicketLifeCycle %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/TicketPrint.aspx?ViewInside=") + true.ToStringValue().ToBase64String(true) + "&Module="+"TS".ToBase64String(true) %>"><i class="fa fa-print fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_TicketPrint %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/WorkStationSelect.aspx?ViewInside=") + true.ToStringValue().ToBase64String(true) + "&Module="+"TS".ToBase64String(true) %>"><i class="fa fa-desktop fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_Dashboard %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/DailyReport.aspx?ViewInside=") + true.ToStringValue().ToBase64String(true)  + "&Module="+"TS".ToBase64String(true) %>"><i class="fa fa-list-ul fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_DailyReport %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/IssueReport.aspx?ViewInside=")+ true.ToStringValue().ToBase64String(true)  + "&Module="+"TS".ToBase64String(true) %>"><i class="fa fa-renren fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_IssueReport %>"></asp:Literal></a>
+                                    </li>
+                                    <%-- <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/WorkHourException.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-clock-o fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_WorkHourException %>"></asp:Literal></a>
+                                    </li>--%>
+                                    <%-- <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/DeviceParametersByED.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-flask fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_DeviceParametersByED %>"></asp:Literal></a>
+                                    </li>--%>
+                                    <%-- <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/ParametersByPower.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-flash fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_ParametersByPower %>"></asp:Literal></a>
+                                    </li>--%>
+                                    <%-- <li>
+                                        <a href="<%= ResolveClientUrl(@"~/TimeSheet/SupervisorWorkCenter.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-header fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_SupervisorWorkCenter %>"></asp:Literal></a>
+                                    </li>--%>
+                                    <li>
+                                        <a href="#" class="fa fa-table">
+                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_TimeSheet_Report %>"></asp:Literal><span class="fa arrow"></span></a>
+                                        <ul class="nav nav-third-level">
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_003.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_003 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_004.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_004 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_005.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_005 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_007.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_007 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_006.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_006 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_036.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-adjust fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_036 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_011.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_011 %>"></asp:Literal></a>
+                                            </li>
+                                            <%-- <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_012.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_012 %>"></asp:Literal></a>
+                                            </li>--%>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_033.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_033 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_013.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_013 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_015.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_015 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_017.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_017 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_018.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_018 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_019.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_019 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_032.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_032 %>"></asp:Literal></a>
+                                            </li>
+                                            <%-- <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_020.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_020 %>"></asp:Literal></a>
+                                            </li>--%>
+                                            <%-- <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_021.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_021 %>"></asp:Literal></a>
+                                            </li>--%>
+                                            <%-- <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_023.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_023 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_034.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_034 %>"></asp:Literal></a>
+                                            </li>--%>
+                                            <%--  <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_024.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_024 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_025.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_025 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_026.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_026 %>"></asp:Literal></a>
+                                            </li>--%>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_027.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_027 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_028.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_028 %>"></asp:Literal></a>
+                                            </li>
+                                            <%-- <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_029.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_029 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_030.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_030 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_031.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_031 %>"></asp:Literal></a>
+                                            </li>--%>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_009.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_009 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_009_Chart.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-bar-chart-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_009_Chart %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_022.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-bar-chart-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_022 %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_037.aspx?Module=") + "TS".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_RPT_037 %>"></asp:Literal></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fa fa-chain-broken">
+                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_TimeSheet_ParameterManage %>"></asp:Literal><span class="fa arrow"></span></a>
+                                        <ul class="nav nav-third-level">
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/BaseRouting.aspx?Module=") + "TS.admin".ToBase64String(true)  %>"><i class="fa fa-indent fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_BaseRouting %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/DevicePrint.aspx?Module=") + "TS.admin".ToBase64String(true)  %>"><i class="fa fa-print fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_DevicePrint %>"></asp:Literal></a>
+                                            </li>
+                                            <%--                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/StandardMinuteList.aspx?Module=") + "TS.admin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_StandardMinuteList %>"></asp:Literal></a>
+                                            </li>--%>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/DeviceList.aspx?Module=") + "TS.admin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_MaintainDevice %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/DeviceGroup.aspx?Module=") +"TS.admin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_MaintainDeviceGroup %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/DefectList.aspx?Module=") + "TS.QAadmin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_MaintainDefect %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/ScrapReasonMappingDefect.aspx?Module=") + "TS.QAadmin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_MaintainScrapReasonMappingDefect %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/FaultList.aspx?Module=") + "TS.MPadmin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_MaintainFault %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/FaultCategoryList.aspx?Module=") + "TS.MPadmin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_MaintainFaultCategory %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/FaultMappingList.aspx?Module=") + "TS.MPadmin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_MaintainFaultMappingList %>"></asp:Literal></a>
+                                            </li>
+                                            <%--                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/TicketParameter.aspx?Module=") + "TS.admin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_TicketParameter %>"></asp:Literal></a>
+                                            </li>--%>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/ProductionVersionGroup.aspx?Module=") + "TS.PMCadmin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_ProductionVersionGroup %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/ProductionTaskList.aspx?Module=") + "TS.PMCadmin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_ProductionTaskList %>"></asp:Literal></a>
+                                            </li>
+                                            <%--                                           <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/WorkHour.aspx?Module=") + "TS.admin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_WorkHour %>"></asp:Literal></a>
+                                            </li>--%>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/MATNRGroup.aspx?Module=") + "TS.QAadmin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_MATNRGroup %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/MATNRParameters.aspx?Module=") + "TS.admin|TS.PMCadmin".ToBase64String(true) %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_MATNRParameters %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/MaintainResponsible.aspx?Module=") + "TS.MPadmin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_MaintainResponsible %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/IssueList.aspx?Module=") + "TS.admin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_MaintainIssue %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/IssueCategoryList.aspx?Module=") + "TS.admin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_MaintainIssueCategory %>"></asp:Literal></a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/IssueCategoryMappingList.aspx?Module=") + "TS.admin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_MaintainIssueCategoryMapping %>"></asp:Literal></a>
+                                            </li>
+                                            <%--                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/TimeSheet/DeliveryLocation.aspx?Module=") + "TS.PMCadmin".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TimeSheet_DeliveryLocation %>"></asp:Literal></a>
+                                            </li>--%>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <%--                            <li id="MenuBarWMSModule" runat="server">
+                                <a href="#"><i class="fa fa-th-large fa-fw"></i>
+                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_WM_Module %>"></asp:Literal><span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/WM/PalletSearch.aspx?Module=") + "WM".ToBase64String(true)  %>"><i class="fa fa-search fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_WM_PalletSearch %>"></asp:Literal></a>
+                                    </li>
+
+                                    <% if (BaseConfiguration.IsTestEnvironment)
+                                        { %>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/WM/PackingToOutside.aspx?Module=") + "WM".ToBase64String(true)  %>"><i class="fa fa-truck fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_WM_PackingToOutside %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/WM/PackingToInside.aspx?Module=") + "WM".ToBase64String(true)  %>"><i class="fa fa-certificate fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_WM_PackingToInside %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/WM/PackingInfo.aspx?Module=") + "WM".ToBase64String(true)  %>"><i class="fa fa-check-square-o fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_WM_PackingInfo %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/WM/PackingInfoByInside.aspx?Module=") + "WM".ToBase64String(true)  %>"><i class="fa fa-check-square-o fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_WM_PackingInfoByInside %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/WM/RPT_005.aspx?Module=") + "WM".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_WM_RPT_005 %>"></asp:Literal></a>
+                                    </li>
+                                    <% } %>
+
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/WM/RPT_002.aspx?Module=") + "WM".ToBase64String(true)  %>"><i class="fa fa-file-excel-o fa-fw"></i>
+                                            <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_WM_RPT_002 %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fa fa-chain-broken">
+                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_TimeSheet_ParameterManage %>"></asp:Literal><span class="fa arrow"></span></a>
+                                        <ul class="nav nav-third-level">
+                                            <li>
+                                                <a href="<%= ResolveClientUrl(@"~/WM/KUNNRVERID.aspx?Module=") + "WM".ToBase64String(true)  %>"><i class="fa fa-cogs fa-fw"></i>
+                                                    <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_WM_KUNNRVERID %>"></asp:Literal></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>--%>
+                            <li id="MenuBarAMD" runat="server" visible="false">
+                                <a href="#"><i class="fa fa-cog fa-fw"></i>
+                                    <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_AMD %>"></asp:Literal><span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="<%=ResolveClientUrl(@"~/UserManage.aspx?MenuName=") + ((string)GetLocalResourceObject("Str_MenuBar_SettingUserManage")).ToBase64String(true) %>">
+                                            <i class="fa fa-child fa-fw"></i>
+                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_AMD_SettingUserManage %>"></asp:Literal></a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= ResolveClientUrl(@"~/ViewOnlineAccount.aspx?MenuName=") + ((string)GetLocalResourceObject("Str_MenuBar_SettingOnLineUserList")).ToBase64String(true) %>">
+                                            <i class="fa fa-list-ol fa-fw"></i>
+                                            <asp:Literal runat="server" Text=" <%$ Resources:Str_MenuBar_AMD_SettingOnLineUserList %>"></asp:Literal></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="text-center" style="padding: 15px 0 0 0;">
+                        <button type="button" class="btn btn-info btn-circle ChangePageWrapper">
+                            <i class="fa fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+        <div id="page-wrapper" style="background-color: rgba(209, 233, 255, 0.1);">
+            <%--    <div id="page-wrapper">--%>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 id="PageMenuName" class="page-header" style="font-weight: bold;"><%= PageMenuName%></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <asp:ContentPlaceHolder ID="ContentPage" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MasterFooterHead" runat="Server">
+    <asp:ContentPlaceHolder ID="MasterFooterHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

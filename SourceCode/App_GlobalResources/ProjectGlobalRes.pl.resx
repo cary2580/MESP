@@ -1,0 +1,876 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Str_ED_P_AdhesionIDRemark" xml:space="preserve">
+    <value>Max:{0}Rate&lt;br&gt;Min:{1}Rate&lt;br&gt;Testing frequency:1/shift&lt;br&gt;Testing time:&lt;br&gt;D:12:00&lt;br&gt;N:19:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_AlcoholFrictionIDRemark" xml:space="preserve">
+    <value>Max:{0}Rate&lt;br&gt;Min:{1}Rate&lt;br&gt;Testing frequency:1/shift&lt;br&gt;Testing time:&lt;br&gt;D:12:00&lt;br&gt;N:19:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_C_Process" xml:space="preserve">
+    <value>Process</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_EmptyPDateOrPIDAlertMessage" xml:space="preserve">
+    <value>PDate Or PID Empty !!</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_FlexibilityIDRemark" xml:space="preserve">
+    <value>Standard:{0}mm&lt;br&gt;Testing frequency:1/shift&lt;br&gt;Testing time:&lt;br&gt;D:12:00&lt;br&gt;N:19:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_ImpactResistanceIDRemark" xml:space="preserve">
+    <value>Standard:{0}cm&lt;br&gt;Testing frequency:1/shift&lt;br&gt;Testing time:&lt;br&gt;D:12:00&lt;br&gt;N:19:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_AdhesionID" xml:space="preserve">
+    <value>Adhesion</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_AlcoholFrictionID" xml:space="preserve">
+    <value>Alcohol Friction</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_CA_LotNumber" xml:space="preserve">
+    <value>Lot Number</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_CA_Qty" xml:space="preserve">
+    <value>(KG)</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_ChemicalAdding_HeadText" xml:space="preserve">
+    <value>Chemical adding</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Conductivity" xml:space="preserve">
+    <value>Conductivity</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Conductivity_Remark" xml:space="preserve">
+    <value>Max: {0}us/cm&lt;br&gt;Min: {1}us/cm&lt;br&gt;Testing frequency: 2/shift&lt;br&gt;Testing time:&lt;br&gt;D:08:00&lt;br&gt;N:20:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_DataRepeat" xml:space="preserve">
+    <value>Data Repeat !!</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_DIWater" xml:space="preserve">
+    <value>DI Wate</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_FilmThicknessRemark" xml:space="preserve">
+    <value>Max:{0}μm&lt;br&gt;Min:{1}μm&lt;br&gt;Testing frequency:1/shift&lt;br&gt;Testing time:&lt;br&gt;D:12:00&lt;br&gt;N:19:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_FilmThicknessValue" xml:space="preserve">
+    <value>Film Thickness</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_FlexibilityID" xml:space="preserve">
+    <value>Flexibility</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_FreeAcidRemark" xml:space="preserve">
+    <value>Max:{0}℃&lt;br&gt;Min:{1}℃&lt;br&gt;Testing frequency:4/shift&lt;br&gt;Testing time:&lt;br&gt;D:08:00&lt;br&gt;N:18:00&lt;br&gt;Testing time:&lt;br&gt;D:11:30&lt;br&gt;N:21:00&lt;br&gt;Testing time:&lt;br&gt;D:14:00&lt;br&gt;N:23:30&lt;br&gt;Testing time:&lt;br&gt;D:16:30&lt;br&gt;N:02:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_FreeAcidValue" xml:space="preserve">
+    <value>Free Acid</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_HardnessID" xml:space="preserve">
+    <value>Hardness</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_HardnessIDRemark" xml:space="preserve">
+    <value>Max限:{0}H&lt;br&gt;Min:{1}H&lt;br&gt;Testing frequency:1/shift&lt;br&gt;Testing time:&lt;br&gt;D:12:00&lt;br&gt;N:19:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_HValue" xml:space="preserve">
+    <value>Base Number</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_HValue_Remark" xml:space="preserve">
+    <value>Max: {0}&lt;br&gt;Min: {1}&lt;br&gt;Testing frequency: 1/shift&lt;br&gt;Testing time:&lt;br&gt;D:08:00&lt;br&gt;N:18:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_ImpactResistanceID" xml:space="preserve">
+    <value>Impact Resistance</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_M_TitleBarText" xml:space="preserve">
+    <value>Parameter Maintenance</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_ParameterName" xml:space="preserve">
+    <value>Parameter</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PB" xml:space="preserve">
+    <value>P/B</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PB_Remark" xml:space="preserve">
+    <value>Max: {0}&lt;br&gt;Min: {1}&lt;br&gt;Testing frequency: 3day&lt;br&gt;Testing time:&lt;br&gt;D:08:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PDate" xml:space="preserve">
+    <value>Date</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PHRemark" xml:space="preserve">
+    <value>Max: {0}&lt;br&gt;Min: {1}&lt;br&gt;Testing frequency: 1/shift&lt;br&gt;Testing time:&lt;br&gt;D:07:30&lt;br&gt;N:17:20</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PHValue" xml:space="preserve">
+    <value>PH</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PLID" xml:space="preserve">
+    <value>Production Line</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_ProcessName" xml:space="preserve">
+    <value>Process</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_ProcessSecond" xml:space="preserve">
+    <value>Process Time</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_ProcessSecondRemark" xml:space="preserve">
+    <value>Max: {0}Sec&lt;br&gt;Min: {1}Sec&lt;br&gt;Testing frequency: 1/shift&lt;br&gt;Testing time:&lt;br&gt;D:12:00&lt;br&gt;N:20:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PromotionPointRemark" xml:space="preserve">
+    <value>MAX:{0}℃&lt;br&gt;Min:{1}℃&lt;br&gt;Testing frequency:8/shift&lt;br&gt;Testing time:&lt;br&gt;D:08:00&lt;br&gt;N:18:00&lt;br&gt;Testing time:&lt;br&gt;D:08:30&lt;br&gt;N:18:30&lt;br&gt;Testing time:&lt;br&gt;D:11:30&lt;br&gt;N:21:00&lt;br&gt;Testing time:&lt;br&gt;D:12:00&lt;br&gt;N:21:30&lt;br&gt;Testing time:&lt;br&gt;D:14:00&lt;br&gt;N:23:00&lt;br&gt;Testing time:&lt;br&gt;D:14:30&lt;br&gt;N:23:30&lt;br&gt;Testing time:&lt;br&gt;D:16:30&lt;br&gt;N:02:30&lt;br&gt;Testing time:&lt;br&gt;D:17:00&lt;br&gt;N:03:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PromotionPointValue" xml:space="preserve">
+    <value>Promotion Point</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PValue" xml:space="preserve">
+    <value>Acid Number</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PValue_Remark" xml:space="preserve">
+    <value>Max: {0}&lt;br&gt;Min: {1}&lt;br&gt;Testing frequency: 1/shift&lt;br&gt;Testing time:&lt;br&gt;D:08:00&lt;br&gt;N:18:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_QuickCorrosionID" xml:space="preserve">
+    <value>Quick Corrosion</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Remark" xml:space="preserve">
+    <value>Remark</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_RequiredByPL" xml:space="preserve">
+    <value>Please choose the Production Line !!</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_RequiredByWorkClass" xml:space="preserve">
+    <value>Please choose the Work class !!</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_RequiredProcess" xml:space="preserve">
+    <value>Please choose the Process !!</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Solid" xml:space="preserve">
+    <value>Solid</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Solid_Remark" xml:space="preserve">
+    <value>Max: {0}%&lt;br&gt;Min: {1}%&lt;br&gt;Testing frequency: 1/shift&lt;br&gt;Testing time:&lt;br&gt;D:08:00&lt;br&gt;N:18:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_SolventHold" xml:space="preserve">
+    <value>Solvent Hold Up</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_SolventHold_Remark" xml:space="preserve">
+    <value>Max: {0}%&lt;br&gt;Min: {1}%&lt;br&gt;Testing frequency: 1week&lt;br&gt;Testing time:&lt;br&gt;D:08:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Temperature" xml:space="preserve">
+    <value>Temperature</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Temperature_Remark" xml:space="preserve">
+    <value>Max:{0}℃&lt;br&gt;Min:{1}℃&lt;br&gt;Testing frequency:2/shift&lt;br&gt;Testing time:&lt;br&gt;D:07:40&lt;br&gt;N:17:30&lt;br&gt;Testing time:&lt;br&gt;D:12:00&lt;br&gt;N:24:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_TotalAcidityRemark" xml:space="preserve">
+    <value>MAX:{0}℃&lt;br&gt;Min:{1}℃&lt;br&gt;Testing frequency:8/shift&lt;br&gt;Testing time:&lt;br&gt;D:08:00&lt;br&gt;N:18:00&lt;br&gt;Testing time:&lt;br&gt;D:08:30&lt;br&gt;N:18:30&lt;br&gt;Testing time:&lt;br&gt;D:11:30&lt;br&gt;N:21:00&lt;br&gt;Testing time:&lt;br&gt;D:12:00&lt;br&gt;N:21:30&lt;br&gt;Testing time:&lt;br&gt;D:14:00&lt;br&gt;N:23:00&lt;br&gt;Testing time:&lt;br&gt;D:14:30&lt;br&gt;N:23:30&lt;br&gt;Testing time:&lt;br&gt;D:16:30&lt;br&gt;N:02:30&lt;br&gt;Testing time:&lt;br&gt;D:17:00&lt;br&gt;N:03:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_TotalAcidity" xml:space="preserve">
+    <value>Total Acidity</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_WaterRinsing" xml:space="preserve">
+    <value>Water Rinsing</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_WorkClass" xml:space="preserve">
+    <value>Work Class</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_QuickCorrosionIDRemark" xml:space="preserve">
+    <value>Standard:{0}h&lt;br&gt;Testing frequency:1/shift&lt;br&gt;Testing time:&lt;br&gt;D:17:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_C_DataRepeat" xml:space="preserve">
+    <value>Data Repeat !!</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_C_M_TitleBarText" xml:space="preserve">
+    <value>Cleaning Maintenance</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_M_TitleBarText" xml:space="preserve">
+    <value>Phosphating Agent B.</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_BAgentDensity" xml:space="preserve">
+    <value>Density Of B Agent </value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_EDResultID" xml:space="preserve">
+    <value>ED Result</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_FreeAcid" xml:space="preserve">
+    <value>Free Acid</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_PHValue" xml:space="preserve">
+    <value>PH</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_Remark" xml:space="preserve">
+    <value>Remark</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_TotalAcidity" xml:space="preserve">
+    <value>Total Acidity</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_CAgentDensity" xml:space="preserve">
+    <value>Density Of C Agent</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_ColorStatus" xml:space="preserve">
+    <value>Color Status</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_DataRepeat" xml:space="preserve">
+    <value>Data Repeat !!</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_CombustorTemperature1" xml:space="preserve">
+    <value>Combustor Initial Testing</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PassingTime" xml:space="preserve">
+    <value>PassingTime</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_SettingTemperature" xml:space="preserve">
+    <value>Setting Temperature</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Zone1Fan1Temperature1" xml:space="preserve">
+    <value>Zone1 Fan1 Temperature Initial Testing</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Zone2Fan2Temperature1" xml:space="preserve">
+    <value>Zone2 Fan2 Temperature Initial Testing</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_CombustorTemperature1Remark" xml:space="preserve">
+    <value>Standard:≤{0}℃&lt;br&gt;Testing frequency:2/shift&lt;br&gt;Testing time:&lt;br&gt;D:10:00&lt;br&gt;N:17:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PassingTimeRemark" xml:space="preserve">
+    <value>Max:{0}min&lt;br&gt;Min:{1}min&lt;br&gt;Testing frequency:1/shift&lt;br&gt;Testing time:&lt;br&gt;D:10:00&lt;br&gt;N:20:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_SettingTemperatureRemark" xml:space="preserve">
+    <value>Max:{0}℃&lt;br&gt;Min:{1}℃&lt;br&gt;Testing frequency:1/Week&lt;br&gt;Testing time:&lt;br&gt;D:07:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Zone1Fan1Temperature1Remark" xml:space="preserve">
+    <value>Max:{0}℃&lt;br&gt;Min:{1}℃&lt;br&gt;Testing frequency:2/shift&lt;br&gt;Testing time:&lt;br&gt;D:10:00&lt;br&gt;N:17:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Zone2Fan2Temperature1Remark" xml:space="preserve">
+    <value>Max:{0}℃&lt;br&gt;Min:{1}℃&lt;br&gt;Testing frequency:2/shift&lt;br&gt;Testing time:&lt;br&gt;D:10:00&lt;br&gt;N:17:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_InitialTestingTimeWord" xml:space="preserve">
+    <value>Initial Testing</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_RetestingTimeWord" xml:space="preserve">
+    <value>Retesting</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Zone1Fan1Temperature2" xml:space="preserve">
+    <value>Zone1 Fan2 Temperature Retesting</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Zone2Fan2Temperature2" xml:space="preserve">
+    <value>Zone2 Fan2 Temperature Retesting</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_CombustorTemperature2Remark" xml:space="preserve">
+    <value>Standard:≤{0}℃&lt;br&gt;Testing frequency:2/shift&lt;br&gt;Testing time:&lt;br&gt;D:14:00&lt;br&gt;N:21:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Zone1Fan1Temperature2Remark" xml:space="preserve">
+    <value>Max:{0}℃&lt;br&gt;Min:{1}℃&lt;br&gt;Testing frequency:2/shift&lt;br&gt;Testing time:&lt;br&gt;D:14:00&lt;br&gt;N:21:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Zone2Fan2Temperature2Remark" xml:space="preserve">
+    <value>Max:{0}℃&lt;br&gt;Min:{1}℃&lt;br&gt;Testing frequency:2/shift&lt;br&gt;Testing time:&lt;br&gt;D:14:00&lt;br&gt;N:21:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_CombustorTemperature2" xml:space="preserve">
+    <value>Combustor Retesting</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_TS_Empty_TicketID" xml:space="preserve">
+    <value>Tiket bez numer </value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Empty_MachineID" xml:space="preserve">
+    <value>Wybierz maszynę</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Empty_AccountID" xml:space="preserve">
+    <value>Work Code EmPustypty</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Empty_WorkCode" xml:space="preserve">
+    <value>Brak ID operatora</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Empty_MaintainID" xml:space="preserve">
+    <value>Brak ID UTR</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Error_NoMaintainData" xml:space="preserve">
+    <value>Brak informacji o awarii</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Empty_AUFNR" xml:space="preserve">
+    <value>Brak nr. zlec. prod.</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_ScanAUFNR" xml:space="preserve">
+    <value>Zeskanuj zlec. prod.</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_ScanMachineID" xml:space="preserve">
+    <value>Zeskanuj QR kod maszyny</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_ScanTicketID" xml:space="preserve">
+    <value>Zeskanuj QR kod Karty</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_ScanWorkCode" xml:space="preserve">
+    <value>Proszę zeskanować ID</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Empty_ProcessID" xml:space="preserve">
+    <value>Brak nr. procesu </value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_ED_P_CA_AddDateTime" xml:space="preserve">
+    <value>Time</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_RequiredByCA" xml:space="preserve">
+    <value>Time or (KG) Not Empty</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_TS_IsPreClose_False" xml:space="preserve">
+    <value>Not In Close</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_IsPreClose_True" xml:space="preserve">
+    <value>In Close</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Empty_DeviceID" xml:space="preserve">
+    <value>Brak ID Maszyny</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Error_ScanLableRepeat" xml:space="preserve">
+    <value>Lable Repeat Please Check！！！BoxNo:</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Error_ScanBarcodeLength" xml:space="preserve">
+    <value>Scan barcode length does not match !!</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Error_TicketID" xml:space="preserve">
+    <value>Brak info. o tikecie</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Empty_WorkShiftID" xml:space="preserve">
+    <value>Zmiana robocza jest pusta.</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_WM_BoxNo" xml:space="preserve">
+    <value>Box No</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_ScanBoxNo" xml:space="preserve">
+    <value>Please Scan Box BarCode</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Qty" xml:space="preserve">
+    <value>Qty</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Creater" xml:space="preserve">
+    <value>Creater</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_TS_TicketID" xml:space="preserve">
+    <value>Tiket ID</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_WM_Error_PackageQty" xml:space="preserve">
+    <value>PackageQty Error</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Empty_BoxNo" xml:space="preserve">
+    <value>Box No Empty</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PrintLable" xml:space="preserve">
+    <value>Print Lable</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_CreatePallet" xml:space="preserve">
+    <value>Create Pallet</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_NoBoxData" xml:space="preserve">
+    <value>No Box Data</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_ScanBoxRepeat" xml:space="preserve">
+    <value>Box No Repeat Please Check !!</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Empty_PalletNo" xml:space="preserve">
+    <value>Pallet No Empty</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_PalletDifferentMATNR" xml:space="preserve">
+    <value>Different materials are not allowed to be pallet !!</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_GoToWarehouse" xml:space="preserve">
+    <value>Go To Warehouse</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_BoxExistsInWarehouse" xml:space="preserve">
+    <value>The Box Exists In Warehouse</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PalletNo" xml:space="preserve">
+    <value>Pallet No</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_ScanPalletNo" xml:space="preserve">
+    <value>Please Scan Pallet QRCode</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_WorkCode" xml:space="preserve">
+    <value>Work Code</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_PalletDontHaveBoxNo" xml:space="preserve">
+    <value>This pallet does not exist this Box No.</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_RepeatPalletConfirm" xml:space="preserve">
+    <value>This pallet has been confirmed !!</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_DataNotInWarehouse" xml:space="preserve">
+    <value>The Warehouse information is not found，Please reconfirm !!</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PalletCreateDateEnd" xml:space="preserve">
+    <value>Date End</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PalletCreateDateStart" xml:space="preserve">
+    <value>Date Start</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_MAKTX" xml:space="preserve">
+    <value>Material</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_BoxQty" xml:space="preserve">
+    <value>Box Qty.</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Brand" xml:space="preserve">
+    <value>Brand</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_CreateAccountByGoToWarehouse" xml:space="preserve">
+    <value>Warehousing personnel</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_CreateDateByGoToWarehouse" xml:space="preserve">
+    <value>Storage date</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_IsConfirmGoToWarehouse" xml:space="preserve">
+    <value>Confirm</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PCS" xml:space="preserve">
+    <value>PCS</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_LGORT" xml:space="preserve">
+    <value>Warehouse</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Empty_LGORT" xml:space="preserve">
+    <value>Warehouse Empty</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_CHARG" xml:space="preserve">
+    <value>CHARG</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_DeliveryLocation" xml:space="preserve">
+    <value>DeliveryLocation</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_TS_VERID" xml:space="preserve">
+    <value>VERID</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Error_AUFNR" xml:space="preserve">
+    <value>Brak informacji o zlec. prod.</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_WM_CINFO" xml:space="preserve">
+    <value>CINFO</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_BSTKD" xml:space="preserve">
+    <value>Customer Order ID</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_DeliveryDate" xml:space="preserve">
+    <value>Delivery Date</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_KUNNR" xml:space="preserve">
+    <value>Customer ID</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_KUNNR_Name" xml:space="preserve">
+    <value>Customer</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_KWMENG" xml:space="preserve">
+    <value>Sales Order PCS</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_MATNR" xml:space="preserve">
+    <value>Material ID</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_POSNR" xml:space="preserve">
+    <value>Sales Order Item</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_VBELN" xml:space="preserve">
+    <value>Sales Order</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_LFIMG" xml:space="preserve">
+    <value>Delivered Qty</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_FIFODay" xml:space="preserve">
+    <value>FIFO Day</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_LastTicketOperator" xml:space="preserve">
+    <value>Operator</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_LastTicketReportDate" xml:space="preserve">
+    <value>Report Date</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_MachineID" xml:space="preserve">
+    <value>Machine ID</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Empty_PackingID" xml:space="preserve">
+    <value>PackingID Empty</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_AllowQty" xml:space="preserve">
+    <value>Allow Qty</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_PackingQtyOverAllowQty" xml:space="preserve">
+    <value>The Qty Over </value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingID" xml:space="preserve">
+    <value>Packing ID</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingInfo" xml:space="preserve">
+    <value>Packing Info</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingIsConfirm" xml:space="preserve">
+    <value>confirmed</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingIsSendOut" xml:space="preserve">
+    <value>Send Out</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingList" xml:space="preserve">
+    <value>Packing List</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingSendOut" xml:space="preserve">
+    <value>Send Out</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_ScanPackingID" xml:space="preserve">
+    <value>Please Scan Packing ID</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_StockList" xml:space="preserve">
+    <value>Inventory list</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_SAPDeliveryNo" xml:space="preserve">
+    <value>SAP Delivery No</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_PackingConfirmNoBox" xml:space="preserve">
+    <value>Pallet/Box No Not In Packing List</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingConfirmed" xml:space="preserve">
+    <value>The Packing ID Confirmed !!</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PBNO" xml:space="preserve">
+    <value>Pallet/Box No</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_BoxNoNotInPacking" xml:space="preserve">
+    <value>This box no is shipped out of the warehouse in one piece, please scan the pallet no.</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_PackingBoxConfirm" xml:space="preserve">
+    <value>The number of scanned boxes is inconsistent with the number of packed boxes !!</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_PalletNoNotInPacking" xml:space="preserve">
+    <value>This pallet no is not shipped out of the warehouse in one piece, please scan the box no.</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingConfirmAccountName" xml:space="preserve">
+    <value>Confirm personnel</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingConfirmDate" xml:space="preserve">
+    <value>Confirm Date</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingConfirmMessage" xml:space="preserve">
+    <value>Packing Confirm ?</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_RepeatBoxToPacking" xml:space="preserve">
+    <value>BoxNo : {0}，Already in other picking lists, please reconfirm.</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingSendOutDate" xml:space="preserve">
+    <value>Send Out Date</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_PackingMATNRNotSame" xml:space="preserve">
+    <value>The material numbers are different and are not allowed to be added to the picking list !!</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_KDMAT" xml:space="preserve">
+    <value>Customer Material No</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingCreateDate" xml:space="preserve">
+    <value>Packing Create Date</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingRemark" xml:space="preserve">
+    <value>Packing Remark</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_TS_Machine" xml:space="preserve">
+    <value>Maszyna</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_WorkCode" xml:space="preserve">
+    <value>ID pracownika</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_WorkShift" xml:space="preserve">
+    <value>Zmiana robocza</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Brand" xml:space="preserve">
+    <value>Lettering</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Error_MachineSuspension" xml:space="preserve">
+    <value>Ta maszyna została zawieszona.</value>
+    <comment>報工系統</comment>
+  </data>
+</root>

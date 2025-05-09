@@ -1,0 +1,876 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Str_ED_P_AdhesionIDRemark" xml:space="preserve">
+    <value>標準上限:{0}級&lt;br&gt;標準下限:{1}級&lt;br&gt;檢測頻次:1次/班&lt;br&gt;檢測時間:&lt;br&gt;D:12:00&lt;br&gt;N:19:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_AlcoholFrictionIDRemark" xml:space="preserve">
+    <value>標準上限:{0}級&lt;br&gt;標準下限:{1}級&lt;br&gt;檢測頻次:1次/班&lt;br&gt;檢測時間:&lt;br&gt;D:12:00&lt;br&gt;N:19:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_C_Process" xml:space="preserve">
+    <value>工序</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_EmptyPDateOrPIDAlertMessage" xml:space="preserve">
+    <value>PDate Or PID Empty !!</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_FlexibilityIDRemark" xml:space="preserve">
+    <value>標準:{0}mm&lt;br&gt;檢測頻次:1次/班&lt;br&gt;檢測時間:&lt;br&gt;D:12:00&lt;br&gt;N:19:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_ImpactResistanceIDRemark" xml:space="preserve">
+    <value>標準:{0}cm&lt;br&gt;檢測頻次:1次/班&lt;br&gt;檢測時間:&lt;br&gt;D:12:00&lt;br&gt;N:19:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_AdhesionID" xml:space="preserve">
+    <value>附著力(級)</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_AlcoholFrictionID" xml:space="preserve">
+    <value>酒精摩擦(級)</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_CA_LotNumber" xml:space="preserve">
+    <value>批次號</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_CA_Qty" xml:space="preserve">
+    <value>加入量(KG)</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_ChemicalAdding_HeadText" xml:space="preserve">
+    <value>化學品添加記錄</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Conductivity" xml:space="preserve">
+    <value>電導率</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Conductivity_Remark" xml:space="preserve">
+    <value>標準上限:{0}us/cm&lt;br&gt;標準下限:{1}us/cm&lt;br&gt;檢測頻次:2次/班&lt;br&gt;檢測時間:&lt;br&gt;D:08:00&lt;br&gt;N:20:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_DataRepeat" xml:space="preserve">
+    <value>此日期已有班別+線別資料，請重新確認 !!</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_DIWater" xml:space="preserve">
+    <value>純水洗</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_FilmThicknessRemark" xml:space="preserve">
+    <value>標準上限:{0}μm&lt;br&gt;標準下限:{1}μm&lt;br&gt;檢測頻次:1次/班&lt;br&gt;檢測時間:&lt;br&gt;D:12:00&lt;br&gt;N:19:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_FilmThicknessValue" xml:space="preserve">
+    <value>膜厚(μm)</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_FlexibilityID" xml:space="preserve">
+    <value>柔韌性(mm)</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_FreeAcidRemark" xml:space="preserve">
+    <value>標準上限:{0}℃&lt;br&gt;標準下限:{1}℃&lt;br&gt;檢測頻次:4次/班&lt;br&gt;檢測時間:&lt;br&gt;D:08:00&lt;br&gt;N:18:00&lt;br&gt;檢測時間:&lt;br&gt;D:11:30&lt;br&gt;N:21:00&lt;br&gt;檢測時間:&lt;br&gt;D:14:00&lt;br&gt;N:23:30&lt;br&gt;檢測時間:&lt;br&gt;D:16:30&lt;br&gt;N:02:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_FreeAcidValue" xml:space="preserve">
+    <value>游離酸</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_HardnessID" xml:space="preserve">
+    <value>硬度(H)</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_HardnessIDRemark" xml:space="preserve">
+    <value>標準上限:{0}H&lt;br&gt;標準下限:{1}H&lt;br&gt;檢測頻次:1次/班&lt;br&gt;檢測時間:&lt;br&gt;D:12:00&lt;br&gt;N:19:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_HValue" xml:space="preserve">
+    <value>鹼值</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_HValue_Remark" xml:space="preserve">
+    <value>標準上限:{0}&lt;br&gt;標準下限:{1}&lt;br&gt;檢測頻次:1次/班&lt;br&gt;檢測時間:&lt;br&gt;D:08:00&lt;br&gt;N:18:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_ImpactResistanceID" xml:space="preserve">
+    <value>抗衝擊性(cm)</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_M_TitleBarText" xml:space="preserve">
+    <value>參數維護</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_ParameterName" xml:space="preserve">
+    <value>參數</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PB" xml:space="preserve">
+    <value>顏基比</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PB_Remark" xml:space="preserve">
+    <value>標準上限:{0}&lt;br&gt;標準下限:{1}&lt;br&gt;檢測頻次:3天/次&lt;br&gt;檢測時間:&lt;br&gt;D:08:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PDate" xml:space="preserve">
+    <value>日期</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PHRemark" xml:space="preserve">
+    <value>標準上限:{0}&lt;br&gt;標準下限:{1}&lt;br&gt;檢測頻次:1次/班&lt;br&gt;檢測時間:&lt;br&gt;D:07:30&lt;br&gt;N:17:20</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PHValue" xml:space="preserve">
+    <value>PH</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PLID" xml:space="preserve">
+    <value>線別</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_ProcessName" xml:space="preserve">
+    <value>工序</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_ProcessSecond" xml:space="preserve">
+    <value>處理時間</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_ProcessSecondRemark" xml:space="preserve">
+    <value>標準上限:{0}秒&lt;br&gt;標準下限:{1}秒&lt;br&gt;檢測頻次:1次/班&lt;br&gt;檢測時間:&lt;br&gt;D:12:00&lt;br&gt;N:20:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PromotionPointRemark" xml:space="preserve">
+    <value>標準上限:{0}℃&lt;br&gt;標準下限:{1}℃&lt;br&gt;檢測頻次:8次/班&lt;br&gt;檢測時間:&lt;br&gt;D:08:00&lt;br&gt;N:18:00&lt;br&gt;檢測時間:&lt;br&gt;D:08:30&lt;br&gt;N:18:30&lt;br&gt;檢測時間:&lt;br&gt;D:11:30&lt;br&gt;N:21:00&lt;br&gt;檢測時間:&lt;br&gt;D:12:00&lt;br&gt;N:21:30&lt;br&gt;檢測時間:&lt;br&gt;D:14:00&lt;br&gt;N:23:00&lt;br&gt;檢測時間:&lt;br&gt;D:14:30&lt;br&gt;N:23:30&lt;br&gt;檢測時間:&lt;br&gt;D:16:30&lt;br&gt;N:02:30&lt;br&gt;檢測時間:&lt;br&gt;D:17:00&lt;br&gt;N:03:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PromotionPointValue" xml:space="preserve">
+    <value>促進點</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PValue" xml:space="preserve">
+    <value>酸值</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PValue_Remark" xml:space="preserve">
+    <value>標準上限:{0}&lt;br&gt;標準下限:{1}&lt;br&gt;檢測頻次:1次/班&lt;br&gt;檢測時間:&lt;br&gt;D:08:00&lt;br&gt;N:18:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_QuickCorrosionID" xml:space="preserve">
+    <value>快速腐蝕(h)</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Remark" xml:space="preserve">
+    <value>備註</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_RequiredByPL" xml:space="preserve">
+    <value>請選擇線別 !!</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_RequiredByWorkClass" xml:space="preserve">
+    <value>請選擇班別 !!</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_RequiredProcess" xml:space="preserve">
+    <value>請選擇工序 !!</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Solid" xml:space="preserve">
+    <value>固體粉</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Solid_Remark" xml:space="preserve">
+    <value>標準上限:{0}%&lt;br&gt;標準下限:{1}%&lt;br&gt;檢測頻次:1次/班&lt;br&gt;檢測時間:&lt;br&gt;D:08:00&lt;br&gt;N:18:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_SolventHold" xml:space="preserve">
+    <value>溶劑含量</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_SolventHold_Remark" xml:space="preserve">
+    <value>標準上限:{0}%&lt;br&gt;標準下限:{1}%&lt;br&gt;檢測頻次:1次/周&lt;br&gt;檢測時間:&lt;br&gt;D:08:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Temperature" xml:space="preserve">
+    <value>溫度</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Temperature_Remark" xml:space="preserve">
+    <value>標準上限:{0}℃&lt;br&gt;標準下限:{1}℃&lt;br&gt;檢測頻次:2次/班&lt;br&gt;檢測時間:&lt;br&gt;D:07:40&lt;br&gt;N:17:30&lt;br&gt;檢測時間:&lt;br&gt;D:12:00&lt;br&gt;N:24:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_TotalAcidityRemark" xml:space="preserve">
+    <value>標準上限:{0}℃&lt;br&gt;標準下限:{1}℃&lt;br&gt;檢測頻次:8次/班&lt;br&gt;檢測時間:&lt;br&gt;D:08:00&lt;br&gt;N:18:00&lt;br&gt;檢測時間:&lt;br&gt;D:08:30&lt;br&gt;N:18:30&lt;br&gt;檢測時間:&lt;br&gt;D:11:30&lt;br&gt;N:21:00&lt;br&gt;檢測時間:&lt;br&gt;D:12:00&lt;br&gt;N:21:30&lt;br&gt;檢測時間:&lt;br&gt;D:14:00&lt;br&gt;N:23:00&lt;br&gt;檢測時間:&lt;br&gt;D:14:30&lt;br&gt;N:23:30&lt;br&gt;檢測時間:&lt;br&gt;D:16:30&lt;br&gt;N:02:30&lt;br&gt;檢測時間:&lt;br&gt;D:17:00&lt;br&gt;N:03:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_TotalAcidity" xml:space="preserve">
+    <value>總酸</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_WaterRinsing" xml:space="preserve">
+    <value>水洗</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_WorkClass" xml:space="preserve">
+    <value>班別</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_QuickCorrosionIDRemark" xml:space="preserve">
+    <value>標準:{0}h&lt;br&gt;檢測頻次:1次/班&lt;br&gt;檢測時間:&lt;br&gt;D:17:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_C_DataRepeat" xml:space="preserve">
+    <value>此日期已有線別 + 工序資料，請重新確認 !!</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_C_M_TitleBarText" xml:space="preserve">
+    <value>清潔記錄維護</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_M_TitleBarText" xml:space="preserve">
+    <value>磷化液配製記錄</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_BAgentDensity" xml:space="preserve">
+    <value>B劑密度</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_EDResultID" xml:space="preserve">
+    <value>判定結果</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_FreeAcid" xml:space="preserve">
+    <value>游離酸</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_PHValue" xml:space="preserve">
+    <value>PH</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_Remark" xml:space="preserve">
+    <value>備註</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_TotalAcidity" xml:space="preserve">
+    <value>總酸度</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_CAgentDensity" xml:space="preserve">
+    <value>C劑密度</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_ColorStatus" xml:space="preserve">
+    <value>實際狀態</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_F_DataRepeat" xml:space="preserve">
+    <value>此日期已有資料，請重新確認 !!</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_CombustorTemperature1" xml:space="preserve">
+    <value>燃燒室 初測</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PassingTime" xml:space="preserve">
+    <value>固化通過時間</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_SettingTemperature" xml:space="preserve">
+    <value>烤爐設置溫度</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Zone1Fan1Temperature1" xml:space="preserve">
+    <value>前段-風機1 初測</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Zone2Fan2Temperature1" xml:space="preserve">
+    <value>內部-風機2 初測</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_CombustorTemperature1Remark" xml:space="preserve">
+    <value>標準:≤{0}℃&lt;br&gt;檢測頻次:2次/班&lt;br&gt;檢測時間:&lt;br&gt;D:10:00&lt;br&gt;N:17:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_PassingTimeRemark" xml:space="preserve">
+    <value>標準上限:{0}min&lt;br&gt;標準下限:{1}min&lt;br&gt;檢測頻次:1次/班&lt;br&gt;檢測時間:&lt;br&gt;D:10:00&lt;br&gt;N:20:00</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_SettingTemperatureRemark" xml:space="preserve">
+    <value>標準上限:{0}℃&lt;br&gt;標準下限:{1}℃&lt;br&gt;檢測頻次:1周/次&lt;br&gt;檢測時間:&lt;br&gt;D:07:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Zone1Fan1Temperature1Remark" xml:space="preserve">
+    <value>標準上限:{0}℃&lt;br&gt;標準下限:{1}℃&lt;br&gt;檢測頻次:2次/班&lt;br&gt;檢測時間:&lt;br&gt;D:10:00&lt;br&gt;N:17:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Zone2Fan2Temperature1Remark" xml:space="preserve">
+    <value>標準上限:{0}℃&lt;br&gt;標準下限:{1}℃&lt;br&gt;檢測頻次:2次/班&lt;br&gt;檢測時間:&lt;br&gt;D:10:00&lt;br&gt;N:17:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_InitialTestingTimeWord" xml:space="preserve">
+    <value>初測</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_RetestingTimeWord" xml:space="preserve">
+    <value>複測</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Zone1Fan1Temperature2" xml:space="preserve">
+    <value>前段-風機1 複測</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Zone2Fan2Temperature2" xml:space="preserve">
+    <value>內部-風機2 複測</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_CombustorTemperature2Remark" xml:space="preserve">
+    <value>標準:≤{0}℃&lt;br&gt;檢測頻次:2次/班&lt;br&gt;檢測時間:&lt;br&gt;D:14:00&lt;br&gt;N:21:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Zone1Fan1Temperature2Remark" xml:space="preserve">
+    <value>標準上限:{0}℃&lt;br&gt;標準下限:{1}℃&lt;br&gt;檢測頻次:2次/班&lt;br&gt;檢測時間:&lt;br&gt;D:14:00&lt;br&gt;N:21:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_Zone2Fan2Temperature2Remark" xml:space="preserve">
+    <value>標準上限:{0}℃&lt;br&gt;標準下限:{1}℃&lt;br&gt;檢測頻次:2次/班&lt;br&gt;檢測時間:&lt;br&gt;D:14:00&lt;br&gt;N:21:30</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_CombustorTemperature2" xml:space="preserve">
+    <value>燃燒室 複測</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_TS_Empty_TicketID" xml:space="preserve">
+    <value>流程卡號空白</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Empty_MachineID" xml:space="preserve">
+    <value>機台編號空白</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Empty_AccountID" xml:space="preserve">
+    <value>工號不存在</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Empty_WorkCode" xml:space="preserve">
+    <value>工號空白</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Empty_MaintainID" xml:space="preserve">
+    <value>維修單號空白</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Error_NoMaintainData" xml:space="preserve">
+    <value>查無維修單資料</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Empty_AUFNR" xml:space="preserve">
+    <value>工單號空白</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_ScanAUFNR" xml:space="preserve">
+    <value>請掃描工單條碼</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_ScanMachineID" xml:space="preserve">
+    <value>請掃描機台編號QRCode</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_ScanTicketID" xml:space="preserve">
+    <value>請掃描流程卡QRCode</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_ScanWorkCode" xml:space="preserve">
+    <value>請掃描員工識別證條碼</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Empty_ProcessID" xml:space="preserve">
+    <value>工序號空白</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_ED_P_CA_AddDateTime" xml:space="preserve">
+    <value>時間</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_ED_P_RequiredByCA" xml:space="preserve">
+    <value>時間或加入量不能空白</value>
+    <comment>電鍍參數管理</comment>
+  </data>
+  <data name="Str_TS_IsPreClose_False" xml:space="preserve">
+    <value>未結批</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_IsPreClose_True" xml:space="preserve">
+    <value>結批中</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Empty_DeviceID" xml:space="preserve">
+    <value>機台編號不存在</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Error_ScanLableRepeat" xml:space="preserve">
+    <value>條碼重複，請檢查 !!箱號:</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Error_ScanBarcodeLength" xml:space="preserve">
+    <value>掃描條碼長度不符 !!</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Error_TicketID" xml:space="preserve">
+    <value>查無流程卡資料</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Empty_WorkShiftID" xml:space="preserve">
+    <value>班別空白</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_WM_BoxNo" xml:space="preserve">
+    <value>箱號</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_ScanBoxNo" xml:space="preserve">
+    <value>請掃描箱號 BarCode</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Qty" xml:space="preserve">
+    <value>數量</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Creater" xml:space="preserve">
+    <value>建立人員</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_TS_TicketID" xml:space="preserve">
+    <value>流程卡號</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_WM_Error_PackageQty" xml:space="preserve">
+    <value>包裝數量錯誤</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Empty_BoxNo" xml:space="preserve">
+    <value>箱號空白</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PrintLable" xml:space="preserve">
+    <value>列印標籤</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_CreatePallet" xml:space="preserve">
+    <value>新增棧板</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_NoBoxData" xml:space="preserve">
+    <value>查無箱號資料</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_ScanBoxRepeat" xml:space="preserve">
+    <value>掃碼箱號重覆，請檢查 !!</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Empty_PalletNo" xml:space="preserve">
+    <value>棧板號空白</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_PalletDifferentMATNR" xml:space="preserve">
+    <value>物料不同，不允許成拖 !!</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_GoToWarehouse" xml:space="preserve">
+    <value>入庫</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_BoxExistsInWarehouse" xml:space="preserve">
+    <value>此箱號已入庫 !!</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PalletNo" xml:space="preserve">
+    <value>棧板號</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_ScanPalletNo" xml:space="preserve">
+    <value>請掃描棧板號 QRCode</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_WorkCode" xml:space="preserve">
+    <value>工號</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_PalletDontHaveBoxNo" xml:space="preserve">
+    <value>此棧板不存在於此箱號</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_RepeatPalletConfirm" xml:space="preserve">
+    <value>此棧板已掃描確認過 !!</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_DataNotInWarehouse" xml:space="preserve">
+    <value>查無此入庫資訊，請重新確認 !!</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PalletCreateDateEnd" xml:space="preserve">
+    <value>入庫日期(迄止)</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PalletCreateDateStart" xml:space="preserve">
+    <value>入庫日期(起始)</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_BoxQty" xml:space="preserve">
+    <value>箱數</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Brand" xml:space="preserve">
+    <value>刻字/SAP批次號</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_CreateAccountByGoToWarehouse" xml:space="preserve">
+    <value>入庫人員</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_CreateDateByGoToWarehouse" xml:space="preserve">
+    <value>入庫時間</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_IsConfirmGoToWarehouse" xml:space="preserve">
+    <value>確認入庫</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_MAKTX" xml:space="preserve">
+    <value>物料名稱</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PCS" xml:space="preserve">
+    <value>件數</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_LGORT" xml:space="preserve">
+    <value>倉別</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Empty_LGORT" xml:space="preserve">
+    <value>倉別空白</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_CHARG" xml:space="preserve">
+    <value>成品SAP批次號</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_DeliveryLocation" xml:space="preserve">
+    <value>交貨地點</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_TS_VERID" xml:space="preserve">
+    <value>生產版本</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Error_AUFNR" xml:space="preserve">
+    <value>查無工單資料</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_WM_CINFO" xml:space="preserve">
+    <value>原材料批號</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_BSTKD" xml:space="preserve">
+    <value>客戶訂單號</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_DeliveryDate" xml:space="preserve">
+    <value>請求交貨日期</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_KUNNR" xml:space="preserve">
+    <value>客戶號碼</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_KUNNR_Name" xml:space="preserve">
+    <value>客戶名稱</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_KWMENG" xml:space="preserve">
+    <value>訂單數量</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_MATNR" xml:space="preserve">
+    <value>物料號碼</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_POSNR" xml:space="preserve">
+    <value>SAP銷售訂單行項目</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_VBELN" xml:space="preserve">
+    <value>SAP銷售訂單</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_LFIMG" xml:space="preserve">
+    <value>已交貨數量</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_FIFODay" xml:space="preserve">
+    <value>先進先出日期</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_LastTicketOperator" xml:space="preserve">
+    <value>最後報工人員</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_LastTicketReportDate" xml:space="preserve">
+    <value>最後報工歸屬日期</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_MachineID" xml:space="preserve">
+    <value>機台號</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Empty_PackingID" xml:space="preserve">
+    <value>裝箱編號空白 !!</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_AllowQty" xml:space="preserve">
+    <value>剩餘交貨數量</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_PackingQtyOverAllowQty" xml:space="preserve">
+    <value>數量超過</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingID" xml:space="preserve">
+    <value>裝箱單號</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingInfo" xml:space="preserve">
+    <value>裝箱內容</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingIsConfirm" xml:space="preserve">
+    <value>倉管是否已確認</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingIsSendOut" xml:space="preserve">
+    <value>是否已出庫</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingList" xml:space="preserve">
+    <value>裝箱清單</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingSendOut" xml:space="preserve">
+    <value>出庫</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_ScanPackingID" xml:space="preserve">
+    <value>請掃描裝箱單號</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_StockList" xml:space="preserve">
+    <value>庫存清單</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_SAPDeliveryNo" xml:space="preserve">
+    <value>SAP交貨單</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_PackingConfirmNoBox" xml:space="preserve">
+    <value>棧板/箱號不存在於裝箱單號</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingConfirmed" xml:space="preserve">
+    <value>此裝箱單已確認過</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PBNO" xml:space="preserve">
+    <value>棧板/箱號</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_BoxNoNotInPacking" xml:space="preserve">
+    <value>此箱號是整拖出庫，請掃描棧板號</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_PackingBoxConfirm" xml:space="preserve">
+    <value>掃描箱數量與裝箱數量不一致 !!</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_PalletNoNotInPacking" xml:space="preserve">
+    <value>此棧板號不是整拖出庫，請掃描箱號</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingConfirmAccountName" xml:space="preserve">
+    <value>確認人員</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingConfirmDate" xml:space="preserve">
+    <value>確認時間</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingConfirmMessage" xml:space="preserve">
+    <value>是否完成裝箱確認 ?</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_RepeatBoxToPacking" xml:space="preserve">
+    <value>箱號 : {0}，已被裝箱，請重新確認。</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingSendOutDate" xml:space="preserve">
+    <value>出庫日期</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_Error_PackingMATNRNotSame" xml:space="preserve">
+    <value>物料號不相同，不允許裝箱 !!</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_KDMAT" xml:space="preserve">
+    <value>客戶物料號</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingCreateDate" xml:space="preserve">
+    <value>裝箱單號建立日期</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_WM_PackingRemark" xml:space="preserve">
+    <value>裝箱單號備註</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_TS_Machine" xml:space="preserve">
+    <value>機台</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_WorkCode" xml:space="preserve">
+    <value>工號</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_WorkShift" xml:space="preserve">
+    <value>班別</value>
+    <comment>報工系統</comment>
+  </data>
+  <data name="Str_TS_Brand" xml:space="preserve">
+    <value>刻字號</value>
+    <comment>倉管系統</comment>
+  </data>
+  <data name="Str_TS_Error_MachineSuspension" xml:space="preserve">
+    <value>此機台已暫停使用 !!</value>
+    <comment>報工系統</comment>
+  </data>
+</root>

@@ -1,0 +1,124 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using DataAccess.Data;
+using DataAccess.Data.Schema;
+
+public partial class TimeSheet_IssueCategoryMappingList : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!Master.IsAccountVerificationPass)
+            return;
+
+        LoadData();
+    }
+
+    /// <summary>
+    /// 載入資料
+    /// </summary>
+    protected void LoadData()
+    {
+        string Query = @"Select CategoryID,CategoryName From T_TSIssueCategory Order By SortID";
+
+        DbCommandBuilder dbcb = new DbCommandBuilder(Query);
+
+        DataTable DT = CommonDB.ExecuteSelectQuery(dbcb);
+
+        IEnumerable<DataColumn> Columns = DT.Columns.Cast<DataColumn>();
+
+        var ResponseData = new
+        {
+            colModel = Columns.Select(Column => new
+            {
+                name = Column.ColumnName,
+                index = Column.ColumnName,
+                label = GetListLabel(Column.ColumnName),
+                width = GetWidth(Column.ColumnName),
+                align = GetAlign(Column.ColumnName),
+                hidden = GetIsHidden(Column.ColumnName),
+                classes = BaseConfiguration.JQGridColumnClassesName
+            }),
+            CategoryIDColumnName = "CategoryID",
+            CategoryNameColumnName = "CategoryName",
+            ColumnClassesName = BaseConfiguration.JQGridColumnClassesName,
+            Rows = DT.AsEnumerable().Select(Row => new
+            {
+                CategoryID = Row["CategoryID"].ToString().Trim(),
+                CategoryName = Row["CategoryName"].ToString().Trim()
+            })
+        };
+
+        Page.ClientScript.RegisterStartupScript(this.GetType(), "IsShowJQGridShowFilterToolbar", "<script>var IsShowJQGridFilterToolbar='" + true.ToStringValue() + "'</script>");
+
+        Page.ClientScript.RegisterStartupScript(this.GetType(), "JQGridDataValue", "<script>var JQGridDataValue=" + Newtonsoft.Json.JsonConvert.SerializeObject(ResponseData) + "</script>");
+    }
+
+    /// <summary>
+    /// 指定ColumnName得到是否顯示
+    /// </summary>
+    /// <param name="ColumnName">DB ColumnName</param>
+    /// <returns>是否顯示</returns>
+    protected bool GetIsHidden(string ColumnName)
+    {
+        switch (ColumnName)
+        {
+            default:
+                return false;
+        }
+    }
+
+    /// <summary>
+    /// 指定ColumnName得到對齊方式
+    /// </summary>
+    /// <param name="ColumnName">DB ColumnName</param>
+    /// <returns>對齊方式</returns>
+    protected string GetAlign(string ColumnName)
+    {
+        switch (ColumnName)
+        {
+            case "CategoryName":
+                return "left";
+            default:
+                return "center";
+        }
+    }
+
+    /// <summary>
+    /// 指定ColumnName得到欄位寬度
+    /// </summary>
+    /// <param name="ColumnName">DB ColumnName</param>
+    /// <returns>欄位寬度</returns>
+    protected int GetWidth(string ColumnName)
+    {
+        switch (ColumnName)
+        {
+            case "CategoryID":
+                return 100;
+            default:
+                return 250;
+        }
+    }
+
+    /// <summary>
+    /// 指定ColumnName得到顯示欄位名稱
+    /// </summary>
+    /// <param name="ColumnName">DB ColumnName</param>
+    /// <returns>顯示欄位名稱</returns>
+    protected string GetListLabel(string ColumnName)
+    {
+        switch (ColumnName)
+        {
+            case "CategoryID":
+                return (string)GetLocalResourceObject("Str_ColumnName_CategoryID");
+            case "CategoryName":
+                return (string)GetLocalResourceObject("Str_ColumnName_CategoryName");
+            default:
+                return ColumnName;
+        }
+    }
+}

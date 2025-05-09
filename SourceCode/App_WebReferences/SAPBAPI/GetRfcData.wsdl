@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://irf.com.tw/webservices" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://irf.com.tw/webservices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://irf.com.tw/webservices">
+      <s:element name="GetData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RfcName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RfcResultTableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RfcParameters" type="tns:ArrayOfRfcParameter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRfcParameter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RfcParameter" nillable="true" type="tns:RfcParameter" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RfcParameter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMultipleData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RfcName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RfcResultTableNameList" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="RfcParameters" type="tns:ArrayOfRfcParameter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDataTable">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DataTable" nillable="true">
+            <s:complexType>
+              <s:sequence>
+                <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMultipleDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMultipleDataResult" type="tns:ArrayOfDataTable" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="GetDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMultipleDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMultipleData" />
+  </wsdl:message>
+  <wsdl:message name="GetMultipleDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMultipleDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GetRfcDataSoap">
+    <wsdl:operation name="GetData">
+      <wsdl:input message="tns:GetDataSoapIn" />
+      <wsdl:output message="tns:GetDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMultipleData">
+      <wsdl:input message="tns:GetMultipleDataSoapIn" />
+      <wsdl:output message="tns:GetMultipleDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GetRfcDataSoap" type="tns:GetRfcDataSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://irf.com.tw/webservices/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMultipleData">
+      <soap:operation soapAction="http://irf.com.tw/webservices/GetMultipleData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GetRfcDataSoap12" type="tns:GetRfcDataSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap12:operation soapAction="http://irf.com.tw/webservices/GetData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMultipleData">
+      <soap12:operation soapAction="http://irf.com.tw/webservices/GetMultipleData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GetRfcData">
+    <wsdl:port name="GetRfcDataSoap" binding="tns:GetRfcDataSoap">
+      <soap:address location="http://localhost/SAPBAPI/GetRfcData.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GetRfcDataSoap12" binding="tns:GetRfcDataSoap12">
+      <soap12:address location="http://localhost/SAPBAPI/GetRfcData.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

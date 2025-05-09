@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://irf.com.tw/webservices" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://irf.com.tw/webservices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://irf.com.tw/webservices">
+      <s:element name="Create_OUTB_DELIVERY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="REF_DOC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="REF_ITEM" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DLV_QTY" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BatchQtyList" type="tns:ArrayOfWM_BatchQty" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWM_BatchQty">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WM_BatchQty" nillable="true" type="tns:WM_BatchQty" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WM_BatchQty">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Batch" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Qty" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LGORT" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Create_OUTB_DELIVERYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Create_OUTB_DELIVERYResult" type="tns:WM_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WM_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Create_OUTB_DELIVERYSoapIn">
+    <wsdl:part name="parameters" element="tns:Create_OUTB_DELIVERY" />
+  </wsdl:message>
+  <wsdl:message name="Create_OUTB_DELIVERYSoapOut">
+    <wsdl:part name="parameters" element="tns:Create_OUTB_DELIVERYResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WMSoap">
+    <wsdl:operation name="Create_OUTB_DELIVERY">
+      <wsdl:input message="tns:Create_OUTB_DELIVERYSoapIn" />
+      <wsdl:output message="tns:Create_OUTB_DELIVERYSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WMSoap" type="tns:WMSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Create_OUTB_DELIVERY">
+      <soap:operation soapAction="http://irf.com.tw/webservices/Create_OUTB_DELIVERY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WMSoap12" type="tns:WMSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Create_OUTB_DELIVERY">
+      <soap12:operation soapAction="http://irf.com.tw/webservices/Create_OUTB_DELIVERY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WM">
+    <wsdl:port name="WMSoap" binding="tns:WMSoap">
+      <soap:address location="http://localhost/SAPBAPI/WM.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WMSoap12" binding="tns:WMSoap12">
+      <soap12:address location="http://localhost/SAPBAPI/WM.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

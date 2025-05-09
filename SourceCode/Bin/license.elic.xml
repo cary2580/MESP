@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<License xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Key="sSKXlqIbQa9oAQDD7Bl0GX8kD9227HaZ+SbxhD171J+YaxB506pIEEr6WbrDrmNsnjSaH4XnqbK4vfAcDu8wLEdffGLHr3jOcSElIR12v9aG4yH1FiNRX2HX9XFv9JlO3a94zF8TriYl36mV7Z3LyBrycMKZP4RFvBGEw6mv1dxHCiXloI2q3vulQCUKbNpzDSMCQb5Rv9NMOvzsCxvTj8I51eCF7bGk3IHsqh1T5xGb2QOeENrgYV2q6kz9sxVCHJSDtmENGM6IlOzOmEYBAYv5joHca/ukgmnj4awgnbLF3OqmrOFB9rPZiSjSlnLK8kZSQUa3j2obL0bqqG7CQcCbvkADeICsidf1q/jksQj9UUSxjURNwtn5jEDPCoC3+MeGccHYcquzaLQCyaFopZ3cUeT6umKWX/KkMvepLY1I7o54QsvirXW+S7r0jOf+8BZcPBoqmHjB8ZgEgbMohjEBmMGcKn4WzueC5hYd7PeLK9jr08XKSe4GhSXVaPRVENWHi1JOjqnloKFaKAbsQ6+lBgPVL70u+ALU31B+B24/HOWU1DvKnTvSx3R735vxxRoX+8VCOqWu5AlTKyZ7AW+w3f0pq9SVtShbHtalZsazG2RmbSubZIqunKrxPCqETM0WmWBlB3mNCV9JtmtZMoJabF5k+IUsl4eDP8fv7nghXGbflq0nqdi2bVyyX3j/qVmZLu1xre0kLSjEStsWAz2o6JvzEizmJ0YJUFyJ+oHAnbNoFq4oTtKZwqFb9+iejn3+N/aeF23hgyFFIAXti4k0p5reVpNC+cMmUZzxNl+Ax/8VjgDmjM2PT4IeHgAkhemTY5Lxtg5IlI1IpgG2nSObXi4Qx0BvZoObKp/YlmQCWrdnPenyBBYqyC0c0oMvvp+FrvjXQjPU87HB8yko1GHxW9VkmyLpEMWXSR3qleTXXj/lFL5CLBI4Zu3GL50o6m4c7IS/6vT3aa/mrZY7lnv9yl6+KQnNB9/PCUFWQjJtoYRa+heYqYOsQDKtKZG0C6Dd4GzQkarly3Kn1+i+wKoE5hfPPcSRIPr7QXONT9/8YdCpNwkLqxEsLUVe6zC9pIHFS6RjiOsPe79l2UOVUlHQNC58EDR5rTM+ei5FWjYwGGW4U8CqA7TpgSGS1fJfIljPyCexeVdN0GwaJufiAF17DsSF31pEkxdE0gbtPbPI39rakIZaW2xtqV6jigP+0M3pOsgoCjWUMx4t5989ELmjVbbp2ogeMXyskylweVuSWjMFI3w4SHoXhcyGdUGiP76XN6mf0NZYGPHGXLd17Vhu32QvLCPOi70OqzaIcTYgSEFidTSdDa65aPl0qzDPlkuWBugiUp4P3loqlSnoj0s8LQ/PfVQUjVbhzDhUIo12XYN41vp6yhOVKcKWvkcBwQ858900++a5fVig31S1XDo3XzPPu5oBW+/mYEZ8DYyqTSKnedmMATxoWgq1Zw1slPPXNAY6Lt+ZperOzYp70A==" Version="1.3">
+	<Type>Runtime</Type>
+	<Username>carylee</Username>
+	<Email>carylee@irf.com.tw</Email>
+	<Organization>IRON FORCE INDUSTRIAL CO., LTD</Organization>
+	<LicensedDate>2019-03-13T00:00:00Z</LicensedDate>
+	<ExpiredDate>2019-05-20T00:00:00Z</ExpiredDate>
+	<Products>
+		<Product>
+			<Name>Spire.Office for .NET</Name>
+			<Version>4.2</Version>
+			<Subscription>
+				<NumberOfPermittedDeveloper>1</NumberOfPermittedDeveloper>
+				<NumberOfPermittedSite>1</NumberOfPermittedSite>
+			</Subscription>
+		</Product>
+	</Products>
+	<Issuer>
+		<Name>e-iceblue</Name>
+		<Email>sales@e-iceblue.com</Email>
+		<Url>http://www.e-iceblue.com</Url>
+	</Issuer>
+</License>

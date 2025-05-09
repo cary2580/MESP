@@ -1,0 +1,96 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/NoFrame.master" AutoEventWireup="true" CodeFile="WM.master.cs" Inherits="WM_WM" %>
+
+<%@ MasterType VirtualPath="~/NoFrame.master" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MasterHead" runat="Server">
+    <script type="text/javascript">
+        $(function ()
+        {
+            $(".ChangePageWrapper").click(function ()
+            {
+                if ($(this).find(".fa").hasClass("fa-arrow-left"))
+                {
+                    $(this).find(".fa").switchClass("fa-arrow-left", "fa-arrow-right");
+                    $(".sidebar").width(0);
+                    $(".sidebar-nav").width(50);
+                    $(".sidebar-nav-all").hide();
+                    $("#page-wrapper").addClass("page-wrapper");
+                    sessionStorage["IsHideMenuBar"] = "1";
+                }
+                else
+                {
+                    $(this).find(".fa").switchClass("fa-arrow-right", "fa-arrow-left");
+                    $(".sidebar").width(250);
+                    $(".sidebar-nav").css("width", "auto");
+                    $(".sidebar-nav-all").show();
+                    $("#page-wrapper").removeClass("page-wrapper");
+                    sessionStorage["IsHideMenuBar"] = "0";
+                }
+                $(this).blur();
+
+                $(window).trigger("resize");
+            });
+
+            if ($.StringConvertBoolean(sessionStorage["IsHideMenuBar"]))
+                $(".ChangePageWrapper").trigger("click");
+        });
+    </script>
+    <style type="text/css">
+        .page-wrapper {
+            margin: 0 0 0 50px !important;
+        }
+
+        .sidebar {
+            margin-top: 1px;
+        }
+
+        .wrapper {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="MasterHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPage" runat="Server">
+    <div id="wrapper">
+        <!-- Navigation -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <div class="sidebar-nav-all">
+                    <ul class="nav" id="side-menu">
+                        <%-- <li>
+                            <a href="<%=ResolveClientUrl(@"~/WM/PalletSearch.aspx")%>"><i class="fa fa-search fa-fw"></i>
+                                <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_PalletSearch %>"></asp:Literal></a>
+                        </li>--%>
+                    </ul>
+                </div>
+                <div class="text-center" style="padding: 15px 0 0 0;">
+                    <button type="button" class="btn btn-info btn-circle ChangePageWrapper">
+                        <i class="fa fa-arrow-left"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+        <!-- /.navbar-static-side -->
+        <div id="page-wrapper" style="background-color: rgba(209, 233, 255, 0.1);">
+            <%--    <div id="page-wrapper">--%>
+            <div class="row">
+                <br />
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <asp:ContentPlaceHolder ID="ContentPage" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MasterFooterHead" runat="Server">
+    <asp:ContentPlaceHolder ID="MasterFooterHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

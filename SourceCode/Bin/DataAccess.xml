@@ -1,0 +1,473 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DataAccess</name>
+    </assembly>
+    <members>
+        <member name="T:DataAccess.Data.Serialization">
+            <summary>
+            物件序列化反序列化處理器
+            </summary>
+        </member>
+        <member name="M:DataAccess.Data.Serialization.UTF8ByteArrayToString(System.Byte[])">
+            <summary>
+            To convert a Byte Array of Unicode values (UTF-8 encoded) to a complete String.
+            </summary>
+            <param name="characters">Unicode Byte Array to be converted to String</param>
+            <returns>String converted from Unicode Byte Array</returns>
+        </member>
+        <member name="M:DataAccess.Data.Serialization.StringToUTF8ByteArray(System.String)">
+            <summary>
+            Converts the String to UTF8 Byte array and is used in De serialization
+            </summary>
+            <param name="pXmlString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.Serialization.SerializeObject``1(``0)">
+            <summary>
+            Serialize an object into an XML string
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.Serialization.DeserializeObject``1(System.String)">
+            <summary>
+            Reconstruct an object from an XML string
+            </summary>
+            <param name="xml"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DataAccess.Data.configuration.ConnectionType">
+            <summary>
+            SQLClient=0
+            OleDB=1
+            ODBC=2
+            Sybase=3
+            </summary>
+        </member>
+        <member name="T:DataAccess.Data.configuration.PagingType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DataAccess.Data.configuration.CommandErrorLog">
+            <summary>
+            是否要將CommonDB的執行錯誤記錄到Cmn_ErrorMessageRecord的Table內,Error_Query欄位所存放的資料為DbCB序列化的結果
+            </summary>
+        </member>
+        <member name="F:DataAccess.Data.configuration.ThrowException">
+            <summary>
+            當CommonDB執行錯誤時是否要丟出Exception
+            </summary>
+        </member>
+        <member name="F:DataAccess.Data.configuration.DataPagingType">
+            <summary>
+            資料庫分頁資料處理模式
+            </summary>
+        </member>
+        <member name="M:DataAccess.Data.configuration.ResetConnection(DataAccess.Data.configuration.ConnectionType,System.String)">
+            <summary>
+            資料庫連線設定
+            </summary>
+            <param name="connectionType"></param>
+            <param name="connectionString"></param>
+        </member>
+        <member name="P:DataAccess.Data.configuration.ConnectionStringBuilder">
+            <summary>
+            指定或取得設定DbConnectionStringBuilder
+            </summary>
+        </member>
+        <member name="P:DataAccess.Data.configuration.CommandTimeout">
+            <summary>
+            取得或設定執行命令等候時間(以秒為單位)
+            </summary>
+        </member>
+        <member name="M:DataAccess.Data.configuration.#cctor">
+            <summary>
+            設定連結方式,連結字串初始值,連結方式及連結字串皆可覆寫
+            </summary>
+        </member>
+        <member name="T:DataAccess.Data.SybaseConnectionStringBuilder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DataAccess.Data.commandBuilder.Timeout">
+            <summary>
+            執行命令的嘗試並產生錯誤之前的等待時間
+            </summary>
+        </member>
+        <member name="F:DataAccess.Data.DbCommandBuilder.DbCommandType">
+            <summary>
+            CommandText屬性解譯的方式
+            </summary>
+        </member>
+        <member name="T:DataAccess.Data.CommonDB">
+            <summary>
+            CommonDB為存取資料的單一窗口,統一用SQL Query查詢及更改資料
+            CommonDB依據不同的configuration設定而叫用不同provider class的method
+            </summary>
+        </member>
+        <member name="M:DataAccess.Data.CommonDB.#cctor">
+            <summary>
+            建構函式
+            </summary>
+        </member>
+        <member name="P:DataAccess.Data.CommonDB.IniDBAccess">
+            <summary>
+            透過delegate取得符合config設定的DBAccess物件
+            </summary>
+        </member>
+        <member name="M:DataAccess.Data.CommonDB.Select(System.String,System.String,System.String)">
+            <summary>
+            查詢資料的唯一method
+            </summary>
+            <param name="DataMember">查詢結果欄位</param>
+            <param name="condition">查詢條件</param>
+            <param name="TableName">table名稱</param>
+            <returns>結果資料表</returns>
+        </member>
+        <member name="M:DataAccess.Data.CommonDB.ObjectUpdate(System.String,System.String,System.String)">
+            <summary>
+            更新資料的唯一method
+            </summary>
+            <param name="DataMemberNameValue">更新值</param>
+            <param name="condition">條件式</param>
+            <param name="TableName">物件名稱(在資料庫內是table名稱,AD內是物件名稱)</param>
+            <returns>執行結果字串</returns>
+        </member>
+        <member name="M:DataAccess.Data.BaseDBAccess.DataAdapter(DataAccess.Data.DbCommandBuilder)">
+            <summary>
+            取得特定DB的DataAdapter
+            </summary>
+            <param name="QueryStringObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.BaseDBAccess.ErrorLogInFile(DataAccess.Data.DbCommandBuilder,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="DbCB"></param>
+            <param name="ErrorMsg"></param>
+        </member>
+        <member name="M:DataAccess.Data.BaseDBAccess.ExecuteScalar(DataAccess.Data.DbCommandBuilder)">
+            <summary>
+            查詢所傳回的結果集第一個資料列的第一個資料行。會忽略其他的資料行或資料列。 
+            </summary>
+            <param name="queryString"></param>
+            <returns>結果值</returns>
+        </member>
+        <member name="M:DataAccess.Data.BaseDBAccess.ExecuteSingleCommand(DataAccess.Data.DbCommandBuilder)">
+            <summary>
+            執行異動單一指令
+            </summary>
+            <param name="QueryStringObject">異動指令</param>
+            <returns>執行結果</returns>
+        </member>
+        <member name="M:DataAccess.Data.BaseDBAccess.ExecuteMultiCommand(DataAccess.Data.DbCommandBuilder[])">
+            <summary>
+            
+            </summary>
+            <param name="QueryStringObjectArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.BaseDBAccess.ExecuteMultiCommand(System.String[],System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="StringArray"></param>
+            <param name="AutoCommit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.BaseDBAccess.ExecuteMultiCommand(DataAccess.Data.DbCommandBuilder[],System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="QueryStringObjectArray"></param>
+            <param name="AutoCommit"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DataAccess.Data.SQLDBAccess">
+            <summary>
+            SQL Server Client provider
+            </summary>
+        </member>
+        <member name="T:DataAccess.Data.SybaseAccess">
+            <summary>
+            SQL Server Client provider
+            </summary>
+        </member>
+        <member name="M:DataAccess.Data.SybaseAccess.#ctor(DataAccess.Data.SybaseConnectionStringBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="ConnectionStringBuilder"></param>
+        </member>
+        <member name="M:DataAccess.Data.SybaseAccess.Command(DataAccess.Data.DbCommandBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="QueryStringObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.SybaseAccess.DataAdapter(DataAccess.Data.DbCommandBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="QueryStringObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.MultiDBTransaction.ExecuteWithMSDTC(DataAccess.Data.MultiDBSetting[])">
+            <summary>
+            使用MSDTC管理跨DB transcation
+            </summary>
+            <param name="MDBSArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.MultiDBTransaction.getConnection(DataAccess.Data.configuration.ConnectionType,System.String)">
+            <summary>
+            取得連線物件
+            </summary>
+            <param name="connectionType"></param>
+            <param name="connectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.MultiDBTransaction.ExecuteWithoutTransaction(System.Int32,DataAccess.Data.MultiDBSetting[]@)">
+            <summary>
+            
+            </summary>
+            <param name="executeIndex"></param>
+            <param name="MDBSArray"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DataAccess.Data.Schema.DBSchema">
+            <summary>
+            取得目前連線DB的Schema
+            </summary>
+        </member>
+        <member name="M:DataAccess.Data.Schema.DBSchema.RenewDBSchema">
+            <summary>
+            重新載入DBSchema
+            </summary>
+        </member>
+        <member name="T:DataAccess.Data.Schema.ObjectSchema">
+            <summary>
+            物件儲存schema, 若儲存在DB即為Table Schema,所儲存在XML即為XML Schema
+            </summary>
+        </member>
+        <member name="P:DataAccess.Data.Schema.ObjectSchema.ContainerName">
+            <summary>
+            容器名稱, 若儲存在DB即為Table Name
+            </summary>
+        </member>
+        <member name="M:DataAccess.Data.Schema.ObjectSchema.clone">
+            <summary>
+            僅複製Schema,不複製value
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.Schema.ObjectSchema.CompareTo(System.Object)">
+            <summary>
+            實做IComparable介面
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.Schema.ObjectSchema.ToInsertQueryStringBuilder">
+            <summary>
+            產生新增的command
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.Schema.ObjectSchema.ToUpdateQueryStringBuilder">
+            <summary>
+            產生更新的command
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.Schema.ObjectSchema.ToDeleteQueryStringBuilder">
+            <summary>
+            產生刪除的command
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.Schema.ObjectSchema.ToSelectQueryStringBuilder">
+            <summary>
+            產生查詢的command
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.Schema.ObjectSchema.NewObjectSchema(System.String)">
+            <summary>
+            產生一個新的實體
+            </summary>
+            <param name="_ContainerName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:DataAccess.Data.Schema.ObjectSchema.AttributeListString">
+            <summary>
+            取得欄位清單字串,以','分隔
+            </summary>
+            <param name="_ContainerName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DataAccess.Data.Schema.DBTableSchema">
+            <summary>
+            資料表Schema
+            </summary>
+        </member>
+        <member name="M:DataAccess.Data.Schema.DBTableSchema.NewObjectSchema(System.String)">
+            <summary>
+            實作基底類別定義的方法
+            </summary>
+            <param name="NewContainerName"></param>
+            <returns></returns>
+        </member>
+        <member name="F:DataAccess.Data.Schema.Attribute.updated">
+            <summary>
+            是否已更新至儲存體
+            </summary>
+        </member>
+        <member name="M:DataAccess.Data.Schema.Attribute.#ctor">
+            <summary>
+            物件儲存schema的委派
+            </summary>
+            
+        </member>
+        <member name="M:DataAccess.Data.Schema.Attribute.ToDbParameter">
+            <summary>
+            取得IDbCommand的paramerter物件
+            </summary>
+            <param name="ParameterValue"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:DataAccess.Data.Schema.Attribute.ToDbParameterArray" -->
+        <member name="M:DataAccess.Data.Schema.SQLColumn.autoFilter(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.Schema.SybaseColumn.autoFilter(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.Schema.SybaseColumn.ToDbParameter">
+            <summary>
+            取得IDbCommand的paramerter物件
+            </summary>
+            <param name="ParameterValue"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:DataAccess.Data.Schema.SybaseColumn.ToDbParameterArray" -->
+        <member name="M:DataAccess.Data.Schema.ObjectAttributeCollection.#ctor">
+            <summary>
+            設定取得物件儲存schema的委派
+            </summary>
+            
+        </member>
+        <member name="T:DataAccess.Data.Schema.ObjectDirectory">
+            <summary>
+            儲存體所有物件類型Schema的描述集合基底類別
+            </summary>
+        </member>
+        <member name="M:DataAccess.Data.Schema.ObjectDirectory.loadTablesSchemaTable(System.String[],DataAccess.Data.BaseDBAccess)">
+            <summary>
+            
+            </summary>
+            <param name="TableList"></param>
+            <param name="DBA"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Data.Schema.ObjectDirectory.fillTablesSchema(System.String[],System.Data.DataTable,DataAccess.Data.BaseDBAccess)">
+            <summary>
+            
+            </summary>
+            <param name="TableList"></param>
+            <param name="SchemaTable"></param>
+        </member>
+        <member name="T:DataAccess.Data.Schema.SQLDBSchema">
+            <summary>
+            MSSQL Server 資料庫所有資料表Schema的描述集合類別
+            </summary>
+        </member>
+        <member name="T:DataAccess.Data.Schema.SybaseDBSchema">
+            <summary>
+            MSSQL Server 資料庫所有資料表Schema的描述集合類別
+            </summary>
+        </member>
+        <member name="M:DataAccess.Data.Schema.SybaseDBSchema.fillTablesSchema(System.String[],System.Data.DataTable,DataAccess.Data.BaseDBAccess)">
+            <summary>
+            
+            </summary>
+            <param name="TableList"></param>
+            <param name="SchemaTable"></param>
+        </member>
+        <member name="T:DataAccess.Data.Schema.baseTypeConvertor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DataAccess.Data.Schema.baseTypeConvertor._DbTypeList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DataAccess.Data.Schema.baseTypeConvertor._DbDataTypeList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DataAccess.Data.Schema.baseTypeConvertor.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DataAccess.Data.Schema.baseTypeConvertor.add(System.Data.DbType,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="dbType"></param>
+            <param name="DBDataType"></param>
+        </member>
+        <member name="P:DataAccess.Data.Schema.baseTypeConvertor.Item(System.Data.DbType)">
+            <summary>
+            
+            </summary>
+            <param name="dbType"></param>
+            <returns></returns>
+        </member>
+        <member name="P:DataAccess.Data.Schema.baseTypeConvertor.Item(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="dbType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DataAccess.Data.Schema.SQLTypeConvertor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DataAccess.Data.Schema.SQLTypeConvertor.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:DataAccess.Data.Schema.SybaseTypeConvertor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DataAccess.Data.Schema.SybaseTypeConvertor.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

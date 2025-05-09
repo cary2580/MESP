@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Str_BT_AddMaintain" xml:space="preserve">
+    <value>确认维修</value>
+  </data>
+  <data name="Str_BT_DeleteName" xml:space="preserve">
+    <value>PD删除</value>
+  </data>
+  <data name="Str_BT_Fault" xml:space="preserve">
+    <value>故障代码</value>
+  </data>
+  <data name="Str_BT_FinishName" xml:space="preserve">
+    <value>PD确认</value>
+  </data>
+  <data name="Str_BT_PDCheckGoin" xml:space="preserve">
+    <value>检验开始</value>
+  </data>
+  <data name="Str_BT_PDCheckGoOut" xml:space="preserve">
+    <value>检验结束</value>
+  </data>
+  <data name="Str_BT_QACheckGoin" xml:space="preserve">
+    <value>检验开始</value>
+  </data>
+  <data name="Str_BT_QACheckGoOut" xml:space="preserve">
+    <value>检验结束</value>
+  </data>
+  <data name="Str_CancelSuccessAlertMessage" xml:space="preserve">
+    <value>维修取消成功</value>
+  </data>
+  <data name="Str_ColumnName_FaultCategoryName" xml:space="preserve">
+    <value>故障分类</value>
+  </data>
+  <data name="Str_ColumnName_FaultName" xml:space="preserve">
+    <value>故障代码</value>
+  </data>
+  <data name="Str_ConfirmMessageByCancelOperator" xml:space="preserve">
+    <value>是否确认取消维修 ? 确认后将无法修改</value>
+  </data>
+  <data name="Str_ConfirmMessageByFinishOperator" xml:space="preserve">
+    <value>是否确认完成维修 ? 确认后将无法修改</value>
+  </data>
+  <data name="Str_Error_FirstFaultIDRpeat" xml:space="preserve">
+    <value>故障代码重复 !!</value>
+  </data>
+  <data name="Str_Error_MaintainFaultByFirstListRowLess1" xml:space="preserve">
+    <value>请输入初判故障原因</value>
+  </data>
+  <data name="Str_Error_MaintainResponsible" xml:space="preserve">
+    <value>请选择维修责任归属</value>
+  </data>
+  <data name="Str_Error_NoDeviceData" xml:space="preserve">
+    <value>无此设备编号&lt;br&gt;设备编号 : {0}</value>
+  </data>
+  <data name="Str_Error_NoTicketCurrStatusRow" xml:space="preserve">
+    <value>无进工资料，请重新确认</value>
+  </data>
+  <data name="Str_Error_QACheckNull" xml:space="preserve">
+    <value>请执行QA检验</value>
+  </data>
+  <data name="Str_Fault" xml:space="preserve">
+    <value>故障代码</value>
+  </data>
+  <data name="Str_FaultCategory" xml:space="preserve">
+    <value>故障分类</value>
+  </data>
+  <data name="Str_FinishSuccessAlertMessage" xml:space="preserve">
+    <value>维修单确认成功 &lt;br&gt;维修单号 :</value>
+  </data>
+  <data name="Str_MaintainFaultByFirstListTitle" xml:space="preserve">
+    <value>初判故障原因</value>
+  </data>
+  <data name="Str_MaintainInfo" xml:space="preserve">
+    <value>维修资讯</value>
+  </data>
+  <data name="Str_MaintainInfoOperator" xml:space="preserve">
+    <value>维修人员资讯</value>
+  </data>
+  <data name="Str_MaintainInfo_ConfirmWorkCode" xml:space="preserve">
+    <value>确认人员工号(QA或PD填写)</value>
+  </data>
+  <data name="Str_MaintainInfo_IsAlert" xml:space="preserve">
+    <value>是否报停(MP填写)</value>
+  </data>
+  <data name="Str_MaintainInfo_IsCancel" xml:space="preserve">
+    <value>是否取消维修</value>
+  </data>
+  <data name="Str_MaintainInfo_IsConfirm" xml:space="preserve">
+    <value>是否确认(QA或PD填写)</value>
+  </data>
+  <data name="Str_MaintainInfo_IsTrace" xml:space="preserve">
+    <value>是否追溯(QA填写)</value>
+  </data>
+  <data name="Str_MaintainInfo_MaintainMinute" xml:space="preserve">
+    <value>总维修人时(分)(MP填写)</value>
+  </data>
+  <data name="Str_MaintainInfo_MaintainMinuteByMachine" xml:space="preserve">
+    <value>总维修机时(分)</value>
+  </data>
+  <data name="Str_MaintainInfo_Remark1" xml:space="preserve">
+    <value>维修过程简要说明(MP填写)</value>
+  </data>
+  <data name="Str_MaintainInfo_Remark2" xml:space="preserve">
+    <value>维修前说明(QA或PD填写)</value>
+  </data>
+  <data name="Str_MaintainInfo_Remark3" xml:space="preserve">
+    <value>维修后说明(QA或PD填写)</value>
+  </data>
+  <data name="Str_MaintainInfo_TestQty1" xml:space="preserve">
+    <value>调试品数量(PD填写)</value>
+  </data>
+  <data name="Str_MaintainInfo_TestQty2" xml:space="preserve">
+    <value>调机品报废数(MP填写)</value>
+  </data>
+  <data name="Str_MaintainInfo_TestTicketID" xml:space="preserve">
+    <value>调试品对应流程卡号(PD填写)</value>
+  </data>
+  <data name="Str_MaintainInfo_TraceGoodQty" xml:space="preserve">
+    <value>追溯良品数量(PD填写)</value>
+  </data>
+  <data name="Str_MaintainInfo_TraceNGQty" xml:space="preserve">
+    <value>追溯不良品数量(PD填写)</value>
+  </data>
+  <data name="Str_MaintainInfo_TraceQty" xml:space="preserve">
+    <value>追溯数量</value>
+  </data>
+  <data name="Str_MaintainPDCheck" xml:space="preserve">
+    <value>PD检验</value>
+  </data>
+  <data name="Str_MaintainPDCheckInfo_PDCheckMinute" xml:space="preserve">
+    <value>检验时间(分)</value>
+  </data>
+  <data name="Str_MaintainPDCheckInfo_PDCheckTimeEnd" xml:space="preserve">
+    <value>检验时间(迄止)</value>
+  </data>
+  <data name="Str_MaintainPDCheckInfo_PDCheckTimeStart" xml:space="preserve">
+    <value>检验时间(起始)</value>
+  </data>
+  <data name="Str_MaintainPDCheckInfo_PDCheckWorkCode" xml:space="preserve">
+    <value>检验人员</value>
+  </data>
+  <data name="Str_MaintainQACheck" xml:space="preserve">
+    <value>QA检验</value>
+  </data>
+  <data name="Str_MaintainQACheckInfo_QACheckMinute" xml:space="preserve">
+    <value>检验时间(分)</value>
+  </data>
+  <data name="Str_MaintainQACheckInfo_QACheckTimeEnd" xml:space="preserve">
+    <value>检验时间(迄止)</value>
+  </data>
+  <data name="Str_MaintainQACheckInfo_QACheckTimeStart" xml:space="preserve">
+    <value>检验时间(起始)</value>
+  </data>
+  <data name="Str_MaintainQACheckInfo_QACheckWorkCode" xml:space="preserve">
+    <value>检验人员</value>
+  </data>
+  <data name="Str_Responsible" xml:space="preserve">
+    <value>维修责任归属</value>
+  </data>
+  <data name="Str_StartMaintainAlertContent" xml:space="preserve">
+    <value>维修已启动，请注意安全并规范操作（急停或手动状态），无关人员请勿靠近！！</value>
+  </data>
+  <data name="Str_SuccessAlertMessage" xml:space="preserve">
+    <value>维修单纪录成功</value>
+  </data>
+  <data name="Str_TicketInfo" xml:space="preserve">
+    <value>流程卡资讯</value>
+  </data>
+  <data name="Str_TicketInfo_MachineID" xml:space="preserve">
+    <value>机台编号</value>
+  </data>
+  <data name="Str_TicketInfo_MachineName" xml:space="preserve">
+    <value>机台</value>
+  </data>
+  <data name="Str_TicketInfo_MAKTX" xml:space="preserve">
+    <value>成品物料</value>
+  </data>
+  <data name="Str_TicketInfo_Operator" xml:space="preserve">
+    <value>扫描维修员工编号</value>
+  </data>
+  <data name="Str_TicketInfo_ParentMaintainID" xml:space="preserve">
+    <value>前次维修单号</value>
+  </data>
+  <data name="Str_TicketInfo_ProcessName" xml:space="preserve">
+    <value>工序</value>
+  </data>
+  <data name="Str_TicketInfo_RoutingName" xml:space="preserve">
+    <value>途程</value>
+  </data>
+  <data name="Str_TicketInfo_TicketID" xml:space="preserve">
+    <value>流程卡号</value>
+  </data>
+  <data name="Str_TicketInfo_WaitTimeEnd" xml:space="preserve">
+    <value>待修时间(迄止)</value>
+  </data>
+  <data name="Str_TicketInfo_WaitTimeStart" xml:space="preserve">
+    <value>待修时间(起始)</value>
+  </data>
+  <data name="Str_VerifyOperatorWorkCode" xml:space="preserve">
+    <value>验证维修人员工号</value>
+  </data>
+  <data name="Str_VerifyOperatorWorkCodeFail" xml:space="preserve">
+    <value>维修人员工号错误</value>
+  </data>
+  <data name="Str_VerifyPDWorkCode" xml:space="preserve">
+    <value>验证PD人员工号</value>
+  </data>
+  <data name="Str_VerifyPDWorkCodeFail" xml:space="preserve">
+    <value>PD人员工号错误</value>
+  </data>
+</root>

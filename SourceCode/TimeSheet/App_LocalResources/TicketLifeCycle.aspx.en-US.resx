@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Str_BT_ClearQuarantineResult" xml:space="preserve">
+    <value>Rejudgment</value>
+  </data>
+  <data name="Str_BT_DeleteResultItem" xml:space="preserve">
+    <value>Delete Reuslt Itme</value>
+  </data>
+  <data name="Str_BT_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Str_ClearQuarantineResultMessage" xml:space="preserve">
+    <value>Re judgment Finish</value>
+  </data>
+  <data name="Str_ConfirmClearQuarantineResultMessage" xml:space="preserve">
+    <value>Are you sure to re-judgment ?</value>
+  </data>
+  <data name="Str_DeleteResultItemConfirmMessage" xml:space="preserve">
+    <value>Confirm Delete ?</value>
+  </data>
+  <data name="Str_Error_NoTicketRow" xml:space="preserve">
+    <value>No Ticket Data</value>
+  </data>
+  <data name="Str_Item_ApprovalTime" xml:space="preserve">
+    <value>Approver Time</value>
+  </data>
+  <data name="Str_Item_ApproverName" xml:space="preserve">
+    <value>Approver</value>
+  </data>
+  <data name="Str_Item_Brand" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="Str_Item_GoodQty" xml:space="preserve">
+    <value>Good Qty</value>
+  </data>
+  <data name="Str_Item_MachineName" xml:space="preserve">
+    <value>Machine</value>
+  </data>
+  <data name="Str_Item_OperatorName" xml:space="preserve">
+    <value>Operator</value>
+  </data>
+  <data name="Str_Item_Quarantine" xml:space="preserve">
+    <value>Quarantine</value>
+  </data>
+  <data name="Str_Item_ReportTimeEnd" xml:space="preserve">
+    <value>End Time</value>
+  </data>
+  <data name="Str_Item_ReportTimeStart" xml:space="preserve">
+    <value>Start Time</value>
+  </data>
+  <data name="Str_Item_ReWork" xml:space="preserve">
+    <value>ReWork</value>
+  </data>
+  <data name="Str_Item_ReWorkQty" xml:space="preserve">
+    <value>Rework Qty</value>
+  </data>
+  <data name="Str_Item_ScrapQty" xml:space="preserve">
+    <value>Scrap Qty</value>
+  </data>
+  <data name="Str_TicketID" xml:space="preserve">
+    <value>Ticket ID</value>
+  </data>
+  <data name="Str_TicketInfo" xml:space="preserve">
+    <value>Ticket Info</value>
+  </data>
+  <data name="Str_TicketInfo_BATCH" xml:space="preserve">
+    <value>Batch</value>
+  </data>
+  <data name="Str_TicketInfo_CHARG" xml:space="preserve">
+    <value>Charg</value>
+  </data>
+  <data name="Str_TicketInfo_CreateAccountName" xml:space="preserve">
+    <value>Creator</value>
+  </data>
+  <data name="Str_TicketInfo_CreateDate" xml:space="preserve">
+    <value>Create Date</value>
+  </data>
+  <data name="Str_TicketInfo_CreateProcess" xml:space="preserve">
+    <value>Process</value>
+  </data>
+  <data name="Str_TicketInfo_GroupCurr" xml:space="preserve">
+    <value>Group Curr</value>
+  </data>
+  <data name="Str_TicketInfo_MainTicketID" xml:space="preserve">
+    <value>Main Ticket</value>
+  </data>
+  <data name="Str_TicketInfo_MAKTX" xml:space="preserve">
+    <value>material</value>
+  </data>
+  <data name="Str_TicketInfo_MOStatusName" xml:space="preserve">
+    <value>MO Status</value>
+  </data>
+  <data name="Str_TicketInfo_ParentTicketID" xml:space="preserve">
+    <value>Parent Ticket</value>
+  </data>
+  <data name="Str_TicketInfo_PSMNG" xml:space="preserve">
+    <value>MO Qty</value>
+  </data>
+  <data name="Str_TicketInfo_Qty" xml:space="preserve">
+    <value>Ticket Qty</value>
+  </data>
+  <data name="Str_TicketInfo_SEMIFINBATCH" xml:space="preserve">
+    <value>Semifinbatch</value>
+  </data>
+  <data name="Str_TicketInfo_TEXT1" xml:space="preserve">
+    <value>Production Version</value>
+  </data>
+  <data name="Str_TicketInfo_TickeBoxQty" xml:space="preserve">
+    <value>MO Box(general)</value>
+  </data>
+  <data name="Str_TicketInfo_TicketType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Str_TicketInfo_TotalTicketQty" xml:space="preserve">
+    <value>Total Ticket Qty(general)</value>
+  </data>
+  <data name="Str_TicketInfo_WEMNG" xml:space="preserve">
+    <value>Delivered Qty</value>
+  </data>
+  <data name="Str_TicketLifeCycleTitle" xml:space="preserve">
+    <value>Ticket Operation</value>
+  </data>
+  <data name="Str_TicketQuarantineFirstTimeItemInfo" xml:space="preserve">
+    <value>Quarantine FirstTime Info</value>
+  </data>
+  <data name="Str_TicketQuarantineResultInfo" xml:space="preserve">
+    <value>Quarantine Result Info</value>
+  </data>
+  <data name="Str_VerifyWorkCodeFailMessage" xml:space="preserve">
+    <value>work code is wrong</value>
+  </data>
+  <data name="Str_VerifyWorkCodeTitleBarText" xml:space="preserve">
+    <value>Verify Work Code</value>
+  </data>
+</root>

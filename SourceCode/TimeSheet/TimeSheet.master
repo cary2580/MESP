@@ -1,0 +1,239 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/NoFrame.master" AutoEventWireup="true" CodeFile="TimeSheet.master.cs" Inherits="TimeSheet_TimeSheet" %>
+
+<%@ MasterType VirtualPath="~/NoFrame.master" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MasterHead" runat="Server">
+    <script type="text/javascript">
+        $(function () {
+            $(".ChangePageWrapper").click(function () {
+                if ($(this).find(".fa").hasClass("fa-arrow-left")) {
+                    $(this).find(".fa").switchClass("fa-arrow-left", "fa-arrow-right");
+                    $(".sidebar").width(0);
+                    $(".sidebar-nav").width(50);
+                    $(".sidebar-nav-all").hide();
+                    $("#page-wrapper").addClass("page-wrapper");
+                    sessionStorage["IsHideMenuBar"] = "1";
+                }
+                else {
+                    $(this).find(".fa").switchClass("fa-arrow-right", "fa-arrow-left");
+                    $(".sidebar").width(250);
+                    $(".sidebar-nav").css("width", "auto");
+                    $(".sidebar-nav-all").show();
+                    $("#page-wrapper").removeClass("page-wrapper");
+                    sessionStorage["IsHideMenuBar"] = "0";
+                }
+                $(this).blur();
+
+                $(window).trigger("resize");
+            });
+
+            if ($.StringConvertBoolean(sessionStorage["IsHideMenuBar"]))
+                $(".ChangePageWrapper").trigger("click");
+
+
+            $(".language").click(function () {
+
+                $.cookie("langCookie", $(this).data("languageid"), { expires: dayjs(NowtDate, "L").add(7, "day").toDate(), path: "/" });
+
+                window.location.reload();
+            });
+        });
+    </script>
+    <style type="text/css">
+        .page-wrapper {
+            margin: 0 0 0 50px !important;
+        }
+
+        .sidebar {
+            margin-top: 1px;
+        }
+
+            .sidebar .nav-second-level li a {
+                padding-left: 20px !important;
+            }
+
+        .wrapper {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .nav > li > a {
+            padding: 10px 10px !important;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="MasterHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPage" runat="Server">
+    <div id="wrapper">
+        <% if (BaseConfiguration.IsTestEnvironment)
+            { %>
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;">
+            <div class="navbar-header text-center" style="width: 100%">
+                <h3 class="text-center">Test Environment</h3>
+            </div>
+        </nav>
+        <% } %>
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <div class="sidebar-nav-all">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="<%=ResolveClientUrl(@"~/TimeSheet/WorkStationGoIn.aspx")%>"><i class="fa fa-users fa-fw"></i>
+                                <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_WorkStationGoIn %>"></asp:Literal></a>
+                        </li>
+                        <li>
+                            <a href="<%= ResolveClientUrl(@"~/TimeSheet/TicketGoIn.aspx") %>"><i class="fa fa-child fa-fw"></i>
+                                <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TicketGoIn %>"></asp:Literal></a>
+                        </li>
+                        <li>
+                            <a href="<%= ResolveClientUrl(@"~/TimeSheet/IssueReport.aspx") %>"><i class="fa fa-renren fa-fw"></i>
+                                <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_IssueReport %>"></asp:Literal></a>
+                        </li>
+                        <li>
+                            <a href="<%= ResolveClientUrl(@"~/TimeSheet/BrandSet.aspx") %>"><i class="fa fa-cogs fa-fw"></i>
+                                <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_BrandSet %>"></asp:Literal></a>
+                        </li>
+                        <li>
+                            <a href="<%= ResolveClientUrl(@"~/TimeSheet/ProductionInspection.aspx") %>"><i class="fa fa-flask fa-fw"></i>
+                                <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_ProductionInspection %>"></asp:Literal></a>
+                        </li>
+                        <li>
+                            <a href="#" class="fa fa-circle">
+                                <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_Root_DataPreview %>"></asp:Literal><span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<%= ResolveClientUrl(@"~/TimeSheet/TicketLifeCycle.aspx?ViewInside=") + false.ToStringValue().ToBase64String(true) %>"><i class="fa fa-search fa-fw"></i>
+                                        <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TicketLifeCycle %>"></asp:Literal></a>
+                                </li>
+                                <li>
+                                    <a href="<%= ResolveClientUrl(@"~/TimeSheet/MOSearch.aspx") %>"><i class="fa fa-tasks fa-fw"></i>
+                                        <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_MOSearch %>"></asp:Literal></a>
+                                </li>
+                                <li>
+                                    <a href="<%= ResolveClientUrl(@"~/TimeSheet/MaintainSearch.aspx") %>"><i class="fa fa-wrench fa-fw"></i>
+                                        <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_SearchMaintain %>"></asp:Literal></a>
+                                </li>
+                                <li>
+                                    <a href="<%= ResolveClientUrl(@"~/TimeSheet/TickResultWithoutApprovedList.aspx?ViewInside=") + false.ToStringValue().ToBase64String(true) %>"><i class="fa fa-sign-out fa-fw"></i>
+                                        <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TickResultWithoutApprovedList %>"></asp:Literal></a>
+                                </li>
+                                <li>
+                                    <a href="<%= ResolveClientUrl(@"~/TimeSheet/DailyReport.aspx") %>"><i class="fa fa-list-ul fa-fw"></i>
+                                        <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_DailyReport %>"></asp:Literal></a>
+                                </li>
+
+                                <li>
+                                    <a href="<%= ResolveClientUrl(@"~/TimeSheet/WorkStationSelect.aspx?ViewInside=") + false.ToStringValue().ToBase64String(true) %>"><i class="fa fa-desktop fa-fw"></i>
+                                        <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_Dashboard %>"></asp:Literal></a>
+                                </li>
+                                <li>
+                                    <a href="<%= ResolveClientUrl(@"~/TimeSheet/RPT_010.aspx") %>"><i class="fa fa-bar-chart-o fa-fw"></i>
+                                        <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_WorkStationWorkShiftPerformance %>"></asp:Literal></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="fa fa-circle">
+                                <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_Root_CreateTicket %>"></asp:Literal><span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<%= ResolveClientUrl(@"~/TimeSheet/TicketCreate.aspx") %>"><i class="fa fa-files-o fa-fw"></i>
+                                        <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TicketCreate %>"></asp:Literal></a>
+                                </li>
+                                <li>
+                                    <a href="<%= ResolveClientUrl(@"~/TimeSheet/TicketQtyChange.aspx") %>"><i class="fa fa-refresh fa-fw"></i>
+                                        <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TicketQtyChange %>"></asp:Literal></a>
+                                </li>
+                                <li>
+                                    <a href="<%= ResolveClientUrl(@"~/TimeSheet/TicketDelete.aspx") %>"><i class="fa fa-trash-o fa-fw"></i>
+                                        <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TicketDelete %>"></asp:Literal></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="fa fa-circle">
+                                <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_Root_SystemManagement %>"></asp:Literal><span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<%= ResolveClientUrl(@"~/TimeSheet/TicketQuarantineReport.aspx") %>"><i class="fa fa-gavel fa-fw"></i>
+                                        <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_QuarantineReportSet %>"></asp:Literal></a>
+                                </li>
+                                <li>
+                                    <a href="<%= ResolveClientUrl(@"~/TimeSheet/TicketPrint.aspx") %>"><i class="fa fa-print fa-fw"></i>
+                                        <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TicketPrint %>"></asp:Literal></a>
+                                </li>
+                                <li>
+                                    <a href="<%= ResolveClientUrl(@"~/TimeSheet/PackingInfoPrint.aspx") %>"><i class="fa fa-flag fa-fw"></i>
+                                        <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_PackingInfoPrint %>"></asp:Literal></a>
+                                </li>
+                                <li>
+                                    <a href="<%= ResolveClientUrl(@"~/TimeSheet/WMPendingBox.aspx") %>"><i class="fa fa-codepen fa-fw"></i>
+                                        <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_WMPendingBox %>"></asp:Literal></a>
+                                </li>
+                                <li>
+                                    <a href="<%= ResolveClientUrl(@"~/TimeSheet/WorkStationGoOut.aspx") %>"><i class="fa fa-power-off fa-fw"></i>
+                                        <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_WorkStationGoOut %>"></asp:Literal></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="fa fa-globe fa-fw"></i>
+                                        <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_Language %>"></asp:Literal>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                        <li><a data-languageid="zh-TW" class="language" style="cursor: pointer">繁體中文</a>
+                                        </li>
+                                        <li><a data-languageid="zh-CN" class="language" style="cursor: pointer">簡體中文</a>
+                                        </li>
+                                        <li><a data-languageid="pl" class="language" style="cursor: pointer">Polish</a>
+                                        </li>
+                                        <li><a data-languageid="en-US" class="language" style="cursor: pointer">English</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <%--                        <li>
+                            <a href="<%= ResolveClientUrl(@"~/TimeSheet/TicketReportByOtherProcess.aspx") %>"><i class="fa fa-user-md fa-fw"></i>
+                                <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_TicketReportByOtherProcess %>"></asp:Literal></a>
+                        </li>--%>
+
+                        <%--                        <li>
+                            <a href="<%= ResolveClientUrl(@"~/TimeSheet/LableScan.aspx") %>"><i class="fa fa-fire fa-fw"></i>
+                                <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_LableScan %>"></asp:Literal></a>
+                        </li>--%>
+                        <%--                        <li>
+                            <a href="<%= ResolveClientUrl(@"~/TimeSheet/PlanWorkMinuteList.aspx") %>"><i class="fa fa-paper-plane fa-fw"></i>
+                                <asp:Literal runat="server" Text="<%$ Resources:Str_MenuBar_PlanWorkMinuteList %>"></asp:Literal></a>
+                        </li>--%>
+                    </ul>
+                </div>
+                <div class="text-center" style="padding: 15px 0 0 0;">
+                    <button type="button" class="btn btn-info btn-circle ChangePageWrapper">
+                        <i class="fa fa-arrow-left"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+        <!-- /.navbar-static-side -->
+        <div id="page-wrapper" style="background-color: rgba(209, 233, 255, 0.1);">
+            <%--    <div id="page-wrapper">--%>
+            <div class="row">
+                <br />
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <asp:ContentPlaceHolder ID="ContentPage" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MasterFooterHead" runat="Server">
+    <asp:ContentPlaceHolder ID="MasterFooterHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

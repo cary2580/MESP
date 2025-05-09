@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DefaultBackgroundColor" xml:space="preserve">
+    <value>#dcdcdc</value>
+  </data>
+  <data name="Str_AlertMessageButtonsText" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="Str_AlertMessageTitlebarClosetTitlt" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Str_AlertMessageTitleBarText" xml:space="preserve">
+    <value>提示訊息</value>
+  </data>
+  <data name="Str_ConfirmMessageCancelButtonsText" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Str_ConfirmMessageConfirmButtonsText" xml:space="preserve">
+    <value>確認</value>
+  </data>
+  <data name="Str_ConfirmMessageTitleBarText" xml:space="preserve">
+    <value>提示訊息</value>
+    <comment>詢問提示訊息</comment>
+  </data>
+  <data name="Str_CreateSuccessAlertMessage" xml:space="preserve">
+    <value>新增成功 !!</value>
+    <comment>新增完成顯示訊息</comment>
+  </data>
+  <data name="Str_GridSelectZeroAlertMessage" xml:space="preserve">
+    <value>請勾選一筆以上資料 !!</value>
+    <comment>列表選取0筆資料錯誤訊息</comment>
+  </data>
+  <data name="Str_NoPermissionAlertString" xml:space="preserve">
+    <value>您沒有權限檢視或設定內容 !!</value>
+    <comment>無權限進入頁面訊息</comment>
+  </data>
+  <data name="Str_OpenPageTitlebarTitle" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="Str_OrgButtonsText" xml:space="preserve">
+    <value>確認</value>
+    <comment>開啟組織樹確認選取按鈕</comment>
+  </data>
+  <data name="Str_OrgCancelButtonsText" xml:space="preserve">
+    <value>取消</value>
+    <comment>開啟組織樹取消選取按鈕</comment>
+  </data>
+  <data name="Str_OrgTitleBarText" xml:space="preserve">
+    <value>請選取</value>
+    <comment>開啟組織樹TitleBarText</comment>
+  </data>
+  <data name="Str_RequiredAlertMessage" xml:space="preserve">
+    <value>請輸入必要資料</value>
+    <comment>必要欄位未輸入提示訊息</comment>
+  </data>
+  <data name="Str_VerificationAccountFail" xml:space="preserve">
+    <value>帳號認證失敗，請重新登入系統</value>
+    <comment>帳號驗證失效</comment>
+  </data>
+  <data name="Str_VerificationDataDefaultsMessage" xml:space="preserve">
+    <value>帳號認證失敗，請重新登入 !!</value>
+  </data>
+  <data name="Str_VerificationDataDefaultsTitleBarText" xml:space="preserve">
+    <value>系統訊息</value>
+  </data>
+  <data name="Str_ModifySuccessAlertMessage" xml:space="preserve">
+    <value>修改完成 !!</value>
+    <comment>修改完成顯示訊息</comment>
+  </data>
+  <data name="Str_JqgridTitleColor" xml:space="preserve">
+    <value>panel-green</value>
+  </data>
+  <data name="Str_DropDownListDefaultText" xml:space="preserve">
+    <value>-- 請選擇 --</value>
+  </data>
+  <data name="Str_OrganizationDeptCanceledTitle" xml:space="preserve">
+    <value>(已封存)</value>
+  </data>
+  <data name="Str_OrganizationRootFullName" xml:space="preserve">
+    <value>劍麟股份有限公司</value>
+  </data>
+  <data name="Str_OrganizationRootTitle" xml:space="preserve">
+    <value>劍麟股份有限公司</value>
+  </data>
+  <data name="Str_OrganizationLeaveAccountTitle" xml:space="preserve">
+    <value>(已離職)</value>
+  </data>
+  <data name="Str_ReportNoDataRow" xml:space="preserve">
+    <value>查無資料</value>
+  </data>
+  <data name="Str_DownloadFileFailMessageText" xml:space="preserve">
+    <value>檔案下載失敗 !!</value>
+  </data>
+  <data name="Str_DownloadFileTitleBarText" xml:space="preserve">
+    <value>檔案下載</value>
+  </data>
+  <data name="Str_AjaxAlertMessageDefaultMessage" xml:space="preserve">
+    <value>Server 未預期錯誤，請洽平台管理員</value>
+  </data>
+  <data name="Str_AjaxAlertMessageResponseText" xml:space="preserve">
+    <value>Web Server 連線逾時</value>
+  </data>
+  <data name="Str_AjaxAlertMessageTitleBarText" xml:space="preserve">
+    <value>平台訊息</value>
+  </data>
+  <data name="Str_SystemName" xml:space="preserve">
+    <value>製造執行管理系統 MES</value>
+  </data>
+  <data name="Str_BTAttachDeletedName" xml:space="preserve">
+    <value>附件刪除</value>
+    <comment>附件刪除按鈕名稱</comment>
+  </data>
+  <data name="Str_BTAttachUploadName" xml:space="preserve">
+    <value>附件上傳</value>
+    <comment>附件上傳按鈕名稱</comment>
+  </data>
+  <data name="Str_AttachListTitleName" xml:space="preserve">
+    <value>附件列表</value>
+    <comment>附件列表抬頭名稱</comment>
+  </data>
+  <data name="Str_OAHistoryListTitleName" xml:space="preserve">
+    <value>OA單簽核紀錄</value>
+  </data>
+  <data name="Str_FormPanelTitleColor1" xml:space="preserve">
+    <value>panel-primary</value>
+    <comment>各表單內群組Panel 顏色</comment>
+  </data>
+  <data name="Str_BT_SubmitName" xml:space="preserve">
+    <value>儲存</value>
+  </data>
+  <data name="Str_BT_SubmitNameToOA" xml:space="preserve">
+    <value>送OA單</value>
+  </data>
+  <data name="Str_FormPanelTitleColor2" xml:space="preserve">
+    <value>panel-danger</value>
+  </data>
+  <data name="Str_NoDataMessage" xml:space="preserve">
+    <value>查無相關資料</value>
+  </data>
+  <data name="Str_SaveSuccessAlertMessage" xml:space="preserve">
+    <value>儲存成功 !!</value>
+  </data>
+  <data name="Str_NoOAWorkFlowID" xml:space="preserve">
+    <value>查無OA WorkFlowID，請聯繫IT人員 !!</value>
+  </data>
+  <data name="Str_SendToOASuccessAlertMessage" xml:space="preserve">
+    <value>資料已送至OA系統審核 !!</value>
+  </data>
+  <data name="Str_GridSelectOverOneAlertMessage" xml:space="preserve">
+    <value>只允許勾選一筆資料 !!</value>
+    <comment>列表選取1筆以上資料錯誤訊息</comment>
+  </data>
+  <data name="Str_DeleteSuccessAlertMessage" xml:space="preserve">
+    <value>刪除完成 !!</value>
+    <comment>修改完成顯示訊息</comment>
+  </data>
+  <data name="Str_BT_DeleteName" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="Str_BT_AddName" xml:space="preserve">
+    <value>新增</value>
+  </data>
+  <data name="DefaultTreeViewColor" xml:space="preserve">
+    <value>dimgray</value>
+  </data>
+  <data name="Str_FormPanelTitleColor3" xml:space="preserve">
+    <value>panel-success</value>
+  </data>
+  <data name="Str_FormPanelTitleColor4" xml:space="preserve">
+    <value>panel-warning</value>
+  </data>
+  <data name="Str_FormPanelTitleColor5" xml:space="preserve">
+    <value>panel-default</value>
+  </data>
+  <data name="Str_FormPanelTitleColor6" xml:space="preserve">
+    <value>panel-info</value>
+  </data>
+  <data name="Str_FolderTreeViewTitlebarTitle" xml:space="preserve">
+    <value>請選擇資料夾</value>
+  </data>
+  <data name="Str_PermissionTitleName" xml:space="preserve">
+    <value>權限設定</value>
+  </data>
+  <data name="Str_FormPanelTitleColor7" xml:space="preserve">
+    <value>panel-red</value>
+  </data>
+  <data name="Str_FormPanelTitleColor8" xml:space="preserve">
+    <value>panel-yellow</value>
+  </data>
+  <data name="Str_FormPanelTitleColor9" xml:space="preserve">
+    <value>panel-green</value>
+  </data>
+  <data name="Str_BT_PreviousPageName" xml:space="preserve">
+    <value>回上一頁</value>
+  </data>
+  <data name="Str_NoOAAccountAlertMessage" xml:space="preserve">
+    <value>您並未有OA帳號，請先申請OA帳號 !!</value>
+  </data>
+  <data name="Str_CreateOAFailAlertMessage" xml:space="preserve">
+    <value>產生OA失敗..請聯繫IT人員 !!</value>
+  </data>
+  <data name="Str_DownloadFileWaitTitleText" xml:space="preserve">
+    <value>請稍後檔案產生中....</value>
+  </data>
+  <data name="Str_RequiredOneAlertMessage" xml:space="preserve">
+    <value>請輸入一個以上條件 !!</value>
+  </data>
+  <data name="Str_SearchCondition" xml:space="preserve">
+    <value>查詢條件</value>
+  </data>
+  <data name="Str_Search" xml:space="preserve">
+    <value>查詢</value>
+  </data>
+  <data name="Str_DateSelectErrorAlertMessage" xml:space="preserve">
+    <value>日期選擇錯誤 !!</value>
+  </data>
+  <data name="Str_NoUploadFileMessage" xml:space="preserve">
+    <value> 請選擇上傳檔案 !!</value>
+  </data>
+  <data name="Str_BT_CreateName" xml:space="preserve">
+    <value>建立</value>
+  </data>
+  <data name="Str_BT_InsertName" xml:space="preserve">
+    <value>插入</value>
+  </data>
+  <data name="Str_No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="Str_Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="Str_BT_ConfirmName" xml:space="preserve">
+    <value>確認</value>
+  </data>
+  <data name="Str_BT_ExportName" xml:space="preserve">
+    <value>匯出</value>
+  </data>
+  <data name="Str_FormPanelTitleColor10" xml:space="preserve">
+    <value>panel-brown</value>
+  </data>
+  <data name="Str_FormPanelTitleColor11" xml:space="preserve">
+    <value>panel-steelblue</value>
+  </data>
+  <data name="Str_FormPanelTitleColor12" xml:space="preserve">
+    <value>panel-gray</value>
+  </data>
+  <data name="Str_FormPanelTitleColor13" xml:space="preserve">
+    <value>panel-orange</value>
+  </data>
+  <data name="Str_FormPanelTitleColor14" xml:space="preserve">
+    <value>panel-pink</value>
+  </data>
+  <data name="Str_FormPanelTitleColor15" xml:space="preserve">
+    <value>panel-grape</value>
+  </data>
+  <data name="Str_FormPanelTitleColor16" xml:space="preserve">
+    <value>panel-grassgreen</value>
+  </data>
+  <data name="Str_DataRepeat" xml:space="preserve">
+    <value>已有重複資料 !!</value>
+  </data>
+  <data name="Str_GridRequiredOneDataAlertMessage" xml:space="preserve">
+    <value>請輸入一筆資料列 !!</value>
+  </data>
+  <data name="Str_BT_ImportName" xml:space="preserve">
+    <value>匯入</value>
+  </data>
+  <data name="Str_BT_SaveName" xml:space="preserve">
+    <value>儲存</value>
+  </data>
+  <data name="Str_Error_DateSelectOverHalfYear" xml:space="preserve">
+    <value>查詢準則不允許超過半年</value>
+  </data>
+  <data name="Str_BT_CancelName" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Str_BT_FinishName" xml:space="preserve">
+    <value>完成</value>
+  </data>
+  <data name="Str_BT_DeleteAllName" xml:space="preserve">
+    <value>全刪除</value>
+  </data>
+  <data name="Str_ConfirmSuccessAlertMessage" xml:space="preserve">
+    <value>確認完成 !!</value>
+  </data>
+  <data name="Str_BT_SearchName" xml:space="preserve">
+    <value>查詢</value>
+  </data>
+  <data name="Str_SearchResult" xml:space="preserve">
+    <value>查詢結果</value>
+  </data>
+  <data name="Str_SubTotal" xml:space="preserve">
+    <value>總數</value>
+  </data>
+  <data name="Str_SubmitSuccessAlertMessage" xml:space="preserve">
+    <value>儲存成功 !!</value>
+  </data>
+  <data name="Str_DataNotDeleteMessage" xml:space="preserve">
+    <value>資料不能删除</value>
+  </data>
+  <data name="Str_ReportHeading" xml:space="preserve">
+    <value>報表匯出</value>
+  </data>
+  <data name="Str_Empty_MessageEnd" xml:space="preserve">
+    <value>空白 !!</value>
+  </data>
+  <data name="Str_CreateAccountID" xml:space="preserve">
+    <value>建立人員編號</value>
+  </data>
+  <data name="Str_CreateAccountName" xml:space="preserve">
+    <value>建立人員</value>
+  </data>
+  <data name="Str_CreateDate" xml:space="preserve">
+    <value>建立時間</value>
+  </data>
+  <data name="Str_Remark" xml:space="preserve">
+    <value>備註</value>
+  </data>
+  <data name="Str_BT_PrintName" xml:space="preserve">
+    <value>列印</value>
+  </data>
+  <data name="Str_Finish" xml:space="preserve">
+    <value>完成</value>
+  </data>
+  <data name="Str_ScanBarCode" xml:space="preserve">
+    <value>請掃描條碼</value>
+  </data>
+  <data name="Str_BT_Clear" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="Str_Repeat" xml:space="preserve">
+    <value>重複</value>
+  </data>
+  <data name="Str_SearchNullStart" xml:space="preserve">
+    <value>查無此</value>
+  </data>
+  <data name="Str_Avg" xml:space="preserve">
+    <value>均值</value>
+  </data>
+  <data name="Str_SearchConditions" xml:space="preserve">
+    <value>查詢條件</value>
+  </data>
+  <data name="Str_DateEnd" xml:space="preserve">
+    <value>時間(迄止)</value>
+  </data>
+  <data name="Str_DateStart" xml:space="preserve">
+    <value>時間(起始)</value>
+  </data>
+</root>

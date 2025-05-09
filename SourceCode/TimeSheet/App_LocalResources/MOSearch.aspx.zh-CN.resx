@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Str_AUFNR" xml:space="preserve">
+    <value>工单号</value>
+  </data>
+  <data name="Str_BT_SetEnd" xml:space="preserve">
+    <value>设定结束报工</value>
+  </data>
+  <data name="Str_ColumnName_Brand" xml:space="preserve">
+    <value>刻字号</value>
+  </data>
+  <data name="Str_ColumnName_CreateAccountName" xml:space="preserve">
+    <value>开单人</value>
+  </data>
+  <data name="Str_ColumnName_CreateDate" xml:space="preserve">
+    <value>开单时间</value>
+  </data>
+  <data name="Str_ColumnName_CreateProcessName" xml:space="preserve">
+    <value>开单工序</value>
+  </data>
+  <data name="Str_ColumnName_GoodQty" xml:space="preserve">
+    <value>良品数</value>
+  </data>
+  <data name="Str_ColumnName_IsEnd" xml:space="preserve">
+    <value>是否已结束</value>
+  </data>
+  <data name="Str_ColumnName_LastProcessName" xml:space="preserve">
+    <value>最后报工工序</value>
+  </data>
+  <data name="Str_ColumnName_MainTicketID" xml:space="preserve">
+    <value>主流程卡</value>
+  </data>
+  <data name="Str_ColumnName_NextProcessName" xml:space="preserve">
+    <value>下道工序</value>
+  </data>
+  <data name="Str_ColumnName_ParentTicketIDPath" xml:space="preserve">
+    <value>上层流程卡</value>
+  </data>
+  <data name="Str_ColumnName_Qty" xml:space="preserve">
+    <value>开单数</value>
+  </data>
+  <data name="Str_ColumnName_ReportAccountName" xml:space="preserve">
+    <value>最后报工人员</value>
+  </data>
+  <data name="Str_ColumnName_ReportTimeEnd" xml:space="preserve">
+    <value>最后报工时间</value>
+  </data>
+  <data name="Str_ColumnName_ReWorkQty" xml:space="preserve">
+    <value>返工数</value>
+  </data>
+  <data name="Str_ColumnName_ScrapQty" xml:space="preserve">
+    <value>报废数(最后报工工序)</value>
+  </data>
+  <data name="Str_ColumnName_ScrapQtyByTotal" xml:space="preserve">
+    <value>报废数</value>
+  </data>
+  <data name="Str_ColumnName_TicketID" xml:space="preserve">
+    <value>流程卡</value>
+  </data>
+  <data name="Str_ColumnName_TicketTypeName" xml:space="preserve">
+    <value>类型</value>
+  </data>
+  <data name="Str_Error_MultipleAUFNR" xml:space="preserve">
+    <value>此刻字号被设定多个工单号中，无法查询</value>
+  </data>
+  <data name="Str_Error_NoAUFNR" xml:space="preserve">
+    <value>此刻字号并无所属工单号，无法查询</value>
+  </data>
+  <data name="Str_MOInfo" xml:space="preserve">
+    <value>工单资讯</value>
+  </data>
+  <data name="Str_MOInfo_AUART" xml:space="preserve">
+    <value>工单类型</value>
+  </data>
+  <data name="Str_MOInfo_ERDAT" xml:space="preserve">
+    <value>建立日期</value>
+  </data>
+  <data name="Str_MOInfo_FERTH" xml:space="preserve">
+    <value>零件号</value>
+  </data>
+  <data name="Str_MOInfo_FTRMI" xml:space="preserve">
+    <value>核发日期</value>
+  </data>
+  <data name="Str_MOInfo_GLTRP" xml:space="preserve">
+    <value>结束日期</value>
+  </data>
+  <data name="Str_MOInfo_GoodQty" xml:space="preserve">
+    <value>已报工良品数</value>
+  </data>
+  <data name="Str_MOInfo_GSTRP" xml:space="preserve">
+    <value>开始日期</value>
+  </data>
+  <data name="Str_MOInfo_IsPreClose" xml:space="preserve">
+    <value>结批状态</value>
+  </data>
+  <data name="Str_MOInfo_KTEXT" xml:space="preserve">
+    <value>途程名称</value>
+  </data>
+  <data name="Str_MOInfo_MAKTX" xml:space="preserve">
+    <value>成品名称</value>
+  </data>
+  <data name="Str_MOInfo_PLNAL" xml:space="preserve">
+    <value>途程群组计数器</value>
+  </data>
+  <data name="Str_MOInfo_PLNBEZ" xml:space="preserve">
+    <value>成品料号</value>
+  </data>
+  <data name="Str_MOInfo_PLNNR" xml:space="preserve">
+    <value>途程群组</value>
+  </data>
+  <data name="Str_MOInfo_PSMNG" xml:space="preserve">
+    <value>工单总数量</value>
+  </data>
+  <data name="Str_MOInfo_ReWorkQty" xml:space="preserve">
+    <value>已报工返工数</value>
+  </data>
+  <data name="Str_MOInfo_ScrapQty" xml:space="preserve">
+    <value>已报工报废数</value>
+  </data>
+  <data name="Str_MOInfo_TicketTotalQty" xml:space="preserve">
+    <value>流程卡总数量</value>
+  </data>
+  <data name="Str_MOInfo_VERID" xml:space="preserve">
+    <value>生产版本</value>
+  </data>
+  <data name="Str_MOInfo_WEMNG" xml:space="preserve">
+    <value>已交货数量</value>
+  </data>
+  <data name="Str_MOInfo_ZEINR" xml:space="preserve">
+    <value>图号</value>
+  </data>
+  <data name="Str_MONotClose" xml:space="preserve">
+    <value>工单尚未关结，不许允设定结束报工</value>
+  </data>
+  <data name="Str_Note1" xml:space="preserve">
+    <value>红色 = 报工资料全未审核过</value>
+  </data>
+  <data name="Str_Note2" xml:space="preserve">
+    <value>黄色 = 报工资料部分审核过</value>
+  </data>
+  <data name="Str_Note3" xml:space="preserve">
+    <value>粉色 = 良品数 + 报废数 不等于开单数量</value>
+  </data>
+  <data name="Str_SearchResultList" xml:space="preserve">
+    <value>搜寻结果</value>
+  </data>
+  <data name="Str_SetEndConfirmMessage" xml:space="preserve">
+    <value>是否确认设定结束报工 ? 确认后将无法复原 !!</value>
+  </data>
+  <data name="Str_ViewModel" xml:space="preserve">
+    <value>检视模式</value>
+  </data>
+  <data name="Str_ViewModel1ColumnName_GoodQty" xml:space="preserve">
+    <value>良品数</value>
+  </data>
+  <data name="Str_ViewModel1ColumnName_ProcessName" xml:space="preserve">
+    <value>工序</value>
+  </data>
+  <data name="Str_ViewModel1ColumnName_ReportDate" xml:space="preserve">
+    <value>报工时间</value>
+  </data>
+  <data name="Str_ViewModel1ColumnName_ScrapQty" xml:space="preserve">
+    <value>报废数</value>
+  </data>
+  <data name="ViewModel_1" xml:space="preserve">
+    <value>明细表</value>
+  </data>
+  <data name="ViewModel_2" xml:space="preserve">
+    <value>明细表2</value>
+  </data>
+  <data name="ViewModel_3" xml:space="preserve">
+    <value>批量控制表</value>
+  </data>
+</root>
